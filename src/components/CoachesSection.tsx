@@ -11,17 +11,17 @@ const coaches = [
   {
     name: "Alice Johnson",
     bio: "Head Coach with 15 years of experience in competitive swimming.",
-    photo: "/images/coaches/alice.jpg",
+    photo: "/coach2.jpg",
   },
   {
     name: "Mark Smith",
     bio: "Specializes in technique and endurance training.",
-    photo: "/images/coaches/mark.jpg",
+    photo: "/coach1.jpg",
   },
   {
     name: "Sofia Lee",
     bio: "Youth program coordinator and former national swimmer.",
-    photo: "/images/coaches/sofia.jpg",
+    photo: "/coach3.jpg",
   },
 ];
 

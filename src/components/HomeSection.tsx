@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Button, VStack } from "@chakra-ui/react";
+import { Box, Heading, Text, Button, VStack, Spacer } from "@chakra-ui/react";
 
 const HomeSection = () => (
   <Box
@@ -15,6 +15,7 @@ const HomeSection = () => (
       <Heading fontSize={{ base: "3xl", md: "5xl" }}>
         Welcome to Sharks Swimming Club
       </Heading>
+      <Spacer />
       <Text fontSize={{ base: "md", md: "lg" }}>
         Dive into excellence with our expert coaching and vibrant community.
       </Text>

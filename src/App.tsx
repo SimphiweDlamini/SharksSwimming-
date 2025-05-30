@@ -1,7 +1,16 @@
 import "./App.css";
+import Navbar from "./components/Navbar";
+import HomeSection from "./components/HomeSection";
+
+const sections = [{ id: "home", label: "Home" }];
 
 function App() {
-  return <div>Welcome To Sharks Swimming Club</div>;
+  return (
+    <>
+      <Navbar sections={sections}></Navbar>
+      <HomeSection />
+    </>
+  );
 }
 
 export default App;

@@ -17,12 +17,15 @@ const ContactSection = () => (
     maxW="600px"
     mx="auto"
     bg="gray.50"
+    _dark={{ bg: "gray.900" }} // dark mode background
     borderRadius="md"
     boxShadow="md"
     textAlign="center"
   >
-    <Heading mb={6}>Contact Us</Heading>
-    <VStack align="start">
+    <Heading mb={6} color="gray.800" _dark={{ color: "gray.100" }}>
+      Contact Us
+    </Heading>
+    <VStack align="start" color="gray.700" _dark={{ color: "gray.300" }}>
       <HStack>
         <Icon as={FaPhone} color="teal.500" boxSize={5} />
         <Text fontSize="lg">+268 7647 0463</Text>
@@ -33,6 +36,7 @@ const ContactSection = () => (
           href="mailto:stapleychris67@gmail.com"
           fontSize="lg"
           color="teal.600"
+          _dark={{ color: "teal.300" }}
           _hover={{ textDecoration: "underline" }}
         >
           stapleychris67@gmail.com

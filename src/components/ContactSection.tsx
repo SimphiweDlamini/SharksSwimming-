@@ -7,6 +7,8 @@ import {
   HStack,
   Icon,
 } from "@chakra-ui/react";
+import "@fontsource/raleway/400.css";
+import "@fontsource/roboto-slab/400.css";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const ContactSection = () => (
@@ -22,7 +24,12 @@ const ContactSection = () => (
     boxShadow="md"
     textAlign="center"
   >
-    <Heading mb={6} color="gray.800" _dark={{ color: "gray.100" }}>
+    <Heading
+      fontFamily="Raleway, sans-serif"
+      mb={6}
+      color="gray.800"
+      _dark={{ color: "gray.100" }}
+    >
       Contact Us
     </Heading>
     <VStack align="start" color="gray.700" _dark={{ color: "gray.300" }}>

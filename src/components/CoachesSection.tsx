@@ -6,31 +6,23 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
+import "@fontsource/raleway/400.css";
+import "@fontsource/roboto-slab/400.css";
 
 const coaches = [
   {
-    name: "Alice Johnson",
-    bio: "Head Coach with 15 years of experience in competitive swimming.",
-    photo: "/coach2.jpg",
-  },
-  {
-    name: "Mark Smith",
+    name: "Chris Stapley",
     bio: "Specializes in technique and endurance training.",
     photo: "/coach1.jpg",
-  },
-  {
-    name: "Sofia Lee",
-    bio: "Youth program coordinator and former national swimmer.",
-    photo: "/coach3.jpg",
   },
 ];
 
 const CoachesSection = () => (
-  <Box id="coach" py={20} px={6} maxW="900px" mx="auto">
-    <Heading mb={8} textAlign="center">
-      Meet Our Coaches
+  <Box id="coach" py={20} px={6} maxW="600px" mx="auto">
+    <Heading fontFamily="Raleway, sans-serif" mb={8} textAlign="center">
+      Meet Our Coach
     </Heading>
-    <SimpleGrid columns={{ base: 1, md: 3 }}>
+    <SimpleGrid columns={{ base: 1, md: 1 }}>
       {coaches.map(({ name, bio, photo }) => (
         <VStack
           key={name}
@@ -46,8 +38,12 @@ const CoachesSection = () => (
             alt={name}
             objectFit="cover"
           />
-          <Heading size="md">{name}</Heading>
-          <Text textAlign="center">{bio}</Text>
+          <Heading fontFamily="Raleway, sans-serif" size="md">
+            {name}
+          </Heading>
+          <Text fontFamily="Roboto Slab, serif" textAlign="center">
+            {bio}
+          </Text>
         </VStack>
       ))}
     </SimpleGrid>

@@ -1,4 +1,6 @@
 import { Box, Heading, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import "@fontsource/raleway/400.css";
+import "@fontsource/roboto-slab/400.css";
 
 const programs = [
   {
@@ -20,7 +22,7 @@ const programs = [
 
 const ProgramsSection = () => (
   <Box id="programs" py={20} px={6} maxW="900px" mx="auto">
-    <Heading mb={8} textAlign="center">
+    <Heading fontFamily="Raleway, sans-serif" mb={8} textAlign="center">
       Our Programs
     </Heading>
     <SimpleGrid columns={{ base: 1, md: 3 }}>
@@ -32,8 +34,10 @@ const ProgramsSection = () => (
           borderRadius="md"
           align="start"
         >
-          <Heading size="md">{title}</Heading>
-          <Text>{description}</Text>
+          <Heading fontFamily="Raleway, sans-serif" size="md">
+            {title}
+          </Heading>
+          <Text fontFamily="Roboto Slab, serif">{description}</Text>
         </VStack>
       ))}
     </SimpleGrid>

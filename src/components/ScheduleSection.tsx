@@ -1,4 +1,6 @@
 import { Table, Box, Heading } from "@chakra-ui/react";
+import "@fontsource/raleway/400.css";
+import "@fontsource/roboto-slab/400.css";
 
 const schedule = [
   { day: "Monday", time: "6:00 PM - 8:00 PM" },
@@ -9,19 +11,25 @@ const schedule = [
 
 const ScheduleSection = () => (
   <Box id="schedule" py={20} px={6} maxW="600px" mx="auto" textAlign="center">
-    <Heading mb={6}>Training Schedule</Heading>
+    <Heading fontFamily="Raleway, sans-serif" mb={6}>
+      Training Schedule
+    </Heading>
     <Table.Root size="md" width="100%">
       <Table.Header>
         <Table.Row>
-          <Table.ColumnHeader>Day</Table.ColumnHeader>
-          <Table.ColumnHeader>Time</Table.ColumnHeader>
+          <Table.ColumnHeader fontFamily="Roboto Slab, serif">
+            Day
+          </Table.ColumnHeader>
+          <Table.ColumnHeader fontFamily="Roboto Slab, serif">
+            Time
+          </Table.ColumnHeader>
         </Table.Row>
       </Table.Header>
       <Table.Body>
         {schedule.map(({ day, time }) => (
           <Table.Row key={day}>
-            <Table.Cell>{day}</Table.Cell>
-            <Table.Cell>{time}</Table.Cell>
+            <Table.Cell fontFamily="Roboto Slab, serif">{day}</Table.Cell>
+            <Table.Cell fontFamily="Roboto Slab, serif">{time}</Table.Cell>
           </Table.Row>
         ))}
       </Table.Body>

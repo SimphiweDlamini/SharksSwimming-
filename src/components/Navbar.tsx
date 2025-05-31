@@ -1,6 +1,8 @@
 import { Box, Flex, Link, Button } from "@chakra-ui/react";
 import { useTheme as useNextTheme } from "next-themes";
 import React from "react";
+import "@fontsource/raleway/400.css";
+import "@fontsource/roboto-slab/400.css"; // Import the regular weight for body
 
 interface NavbarProps {
   sections: { id: string; label: string }[];
@@ -27,10 +29,11 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
         <Box
           fontWeight="bold"
           fontSize="xl"
+          fontFamily="Raleway, sans-serif"
           cursor="pointer"
           onClick={() => handleScroll("hero")}
         >
-          Sharks Swimming Club
+          Sharks Swimming Club Eswatini
         </Box>
         <Flex gap={6}>
           {sections.map(({ id, label }) => (
@@ -39,6 +42,7 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
               onClick={() => handleScroll(id)}
               cursor="pointer"
               fontWeight="medium"
+              fontFamily="Roboto Slab, serif"
               _hover={{ color: "teal.500" }}
             >
               {label}

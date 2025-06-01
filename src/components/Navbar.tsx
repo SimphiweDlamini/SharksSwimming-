@@ -1,4 +1,4 @@
-import { Box, Flex, Link, Button } from "@chakra-ui/react";
+import { Box, Flex, Link, Button, Image } from "@chakra-ui/react";
 import { useTheme as useNextTheme } from "next-themes";
 import React from "react";
 import "@fontsource/raleway/400.css";
@@ -26,12 +26,22 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
         align="center"
         justify="space-between"
       >
+        <Image
+          src="/eswatini-swimming-logo.png"
+          alt="default"
+          borderRadius="md"
+          objectFit="fill"
+          boxShadow="md"
+          onClick={() => handleScroll("home")}
+          maxH="10%"
+          w="10%"
+        />
         <Box
           fontWeight="bold"
           fontSize="xl"
           fontFamily="Raleway, sans-serif"
           cursor="pointer"
-          onClick={() => handleScroll("hero")}
+          onClick={() => handleScroll("home")}
         >
           Sharks Swimming Club Eswatini
         </Box>

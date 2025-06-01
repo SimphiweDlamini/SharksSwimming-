@@ -1,6 +1,7 @@
-import { Table, Box, Heading } from "@chakra-ui/react";
+import { Table, Box, Heading, Container } from "@chakra-ui/react";
 import "@fontsource/raleway/400.css";
 import "@fontsource/roboto-slab/400.css";
+import { useTheme as useNextTheme } from "next-themes";
 
 const schedule = [
   { day: "Monday", time: "6:00 PM - 8:00 PM" },
@@ -9,32 +10,50 @@ const schedule = [
   { day: "Saturday", time: "9:00 AM - 12:00 PM" },
 ];
 
-const ScheduleSection = () => (
-  <Box id="schedule" py={20} px={6} maxW="600px" mx="auto" textAlign="center">
-    <Heading fontFamily="Raleway, sans-serif" mb={6}>
-      Training Schedule
-    </Heading>
-    <Table.Root size="md" width="100%">
-      <Table.Header>
-        <Table.Row>
-          <Table.ColumnHeader fontFamily="Roboto Slab, serif">
-            Day
-          </Table.ColumnHeader>
-          <Table.ColumnHeader fontFamily="Roboto Slab, serif">
-            Time
-          </Table.ColumnHeader>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        {schedule.map(({ day, time }) => (
-          <Table.Row key={day}>
-            <Table.Cell fontFamily="Roboto Slab, serif">{day}</Table.Cell>
-            <Table.Cell fontFamily="Roboto Slab, serif">{time}</Table.Cell>
-          </Table.Row>
-        ))}
-      </Table.Body>
-    </Table.Root>
-  </Box>
-);
+const ScheduleSection = () => {
+  const { theme } = useNextTheme();
+
+  const bg = theme === "dark" ? "#1A202C" : "white";
+  const color = theme === "dark" ? "#E2E8F0" : "#1A202C";
+
+  return (
+    <Box
+      id="schedule"
+      py={20}
+      px={6}
+      //maxW="600px"
+      mx="auto"
+      bg={bg}
+      color={color}
+      textAlign="center"
+    >
+      <Container maxW="600px" px={6}>
+        <Heading fontFamily="Raleway, sans-serif" mb={6}>
+          Training Schedule
+        </Heading>
+        <Table.Root color={color} size="md" width="100%">
+          <Table.Header>
+            <Table.Row>
+              <Table.ColumnHeader fontFamily="Roboto Slab, serif">
+                Day
+              </Table.ColumnHeader>
+              <Table.ColumnHeader fontFamily="Roboto Slab, serif">
+                Time
+              </Table.ColumnHeader>
+            </Table.Row>
+          </Table.Header>
+          <Table.Body>
+            {schedule.map(({ day, time }) => (
+              <Table.Row key={day}>
+                <Table.Cell fontFamily="Roboto Slab, serif">{day}</Table.Cell>
+                <Table.Cell fontFamily="Roboto Slab, serif">{time}</Table.Cell>
+              </Table.Row>
+            ))}
+          </Table.Body>
+        </Table.Root>
+      </Container>
+    </Box>
+  );
+};
 
 export default ScheduleSection;

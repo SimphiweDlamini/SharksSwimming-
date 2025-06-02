@@ -10,6 +10,7 @@ import {
 import "@fontsource/raleway/400.css";
 import "@fontsource/roboto-slab/400.css";
 import { useTheme as useNextTheme } from "next-themes";
+import { Helmet } from "react-helmet-async";
 
 const coaches = [
   {
@@ -25,43 +26,57 @@ const CoachesSection = () => {
   const bg = theme === "dark" ? "#2D3748" : "#EDF2F7";
   const color = theme === "dark" ? "#CBD5E0" : "#2D3748";
   return (
-    <Box id="coach" py={20} px={6} mx="auto" bg={bg} color={color}>
-      <Container maxW="600px" px={6}>
-        <Heading fontFamily="Raleway, sans-serif" mb={8} textAlign="center">
-          Meet Our Coach
-        </Heading>
-        <SimpleGrid columns={{ base: 1, md: 1 }}>
-          {coaches.map(({ name, bio, photo }) => (
-            <VStack
-              key={name}
-              borderWidth="1px"
-              borderRadius="md"
-              p={6}
-              align="center"
-              bg={theme === "dark" ? "#1A202C" : "white"}
-            >
-              <Image
-                borderRadius="full"
-                boxSize="150px"
-                src={photo}
-                alt={name}
-                objectFit="cover"
-              />
-              <Heading color={color} fontFamily="Raleway, sans-serif" size="md">
-                {name}
-              </Heading>
-              <Text
-                color={color}
-                fontFamily="Roboto Slab, serif"
-                textAlign="center"
+    <>
+      <Helmet>
+        <title>Our Coach - Sharks Swimming Club Eswatini</title>
+        <meta
+          name="description"
+          content="Meet the experienced coach for Sharks Swimming Club Eswatini."
+        />
+      </Helmet>
+
+      <Box id="coach" py={20} px={6} mx="auto" bg={bg} color={color}>
+        <Container maxW="600px" px={6}>
+          <Heading fontFamily="Raleway, sans-serif" mb={8} textAlign="center">
+            Meet Our Coach
+          </Heading>
+          <SimpleGrid columns={{ base: 1, md: 1 }}>
+            {coaches.map(({ name, bio, photo }) => (
+              <VStack
+                key={name}
+                borderWidth="1px"
+                borderRadius="md"
+                p={6}
+                align="center"
+                bg={theme === "dark" ? "#1A202C" : "white"}
               >
-                {bio}
-              </Text>
-            </VStack>
-          ))}
-        </SimpleGrid>
-      </Container>
-    </Box>
+                <Image
+                  borderRadius="full"
+                  boxSize="150px"
+                  src={photo}
+                  alt={name}
+                  objectFit="cover"
+                />
+                <Heading
+                  color={color}
+                  fontFamily="Raleway, sans-serif"
+                  size="md"
+                >
+                  {name}
+                </Heading>
+                <Text
+                  color={color}
+                  fontFamily="Roboto Slab, serif"
+                  textAlign="center"
+                >
+                  {bio}
+                </Text>
+              </VStack>
+            ))}
+          </SimpleGrid>
+        </Container>
+      </Box>
+    </>
   );
 };
 

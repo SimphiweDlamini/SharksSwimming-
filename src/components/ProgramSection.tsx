@@ -36,52 +36,54 @@ const ProgramsSection = () => {
   const color = theme === "dark" ? "#CBD5E0" : "#2D3748";
   return (
     <>
-      <Helmet>
-        <title>Swim Programs - Sharks Swimming Club Eswatini</title>
-        <meta
-          name="description"
-          content="Explore our swimming programs for all ages and skill levels in Eswatini"
-        />
-      </Helmet>
+      <section id="programs" aria-labelledby="programs-heading">
+        <Helmet>
+          <title>Swim Programs - Sharks Swimming Club Eswatini</title>
+          <meta
+            name="description"
+            content="Explore our swimming programs for all ages and skill levels in Eswatini"
+          />
+        </Helmet>
 
-      <Box
-        id="programs"
-        py={20}
-        px={6}
-        //maxW="900px"
-        mx="auto"
-        bg={bg}
-        color={color}
-      >
-        <Container maxW="900px" px={6}>
-          <Heading fontFamily="Raleway, sans-serif" mb={8} textAlign="center">
-            Our Programs
-          </Heading>
-          <SimpleGrid columnGap={3} columns={{ base: 1, md: 3 }}>
-            {programs.map(({ title, description }) => (
-              <VStack
-                key={title}
-                p={6}
-                borderWidth="1px"
-                borderRadius="md"
-                align="start"
-                bg={theme === "dark" ? "#1A202C" : "white"}
-              >
-                <Heading
-                  color={color}
-                  fontFamily="Raleway, sans-serif"
-                  size="md"
+        <Box
+          id="programs"
+          py={20}
+          px={6}
+          //maxW="900px"
+          mx="auto"
+          bg={bg}
+          color={color}
+        >
+          <Container maxW="900px" px={6}>
+            <Heading fontFamily="Raleway, sans-serif" mb={8} textAlign="center">
+              Our Programs
+            </Heading>
+            <SimpleGrid columnGap={3} columns={{ base: 1, md: 3 }}>
+              {programs.map(({ title, description }) => (
+                <VStack
+                  key={title}
+                  p={6}
+                  borderWidth="1px"
+                  borderRadius="md"
+                  align="start"
+                  bg={theme === "dark" ? "#1A202C" : "white"}
                 >
-                  {title}
-                </Heading>
-                <Text color={color} fontFamily="Roboto Slab, serif">
-                  {description}
-                </Text>
-              </VStack>
-            ))}
-          </SimpleGrid>
-        </Container>
-      </Box>
+                  <Heading
+                    color={color}
+                    fontFamily="Raleway, sans-serif"
+                    size="md"
+                  >
+                    {title}
+                  </Heading>
+                  <Text color={color} fontFamily="Roboto Slab, serif">
+                    {description}
+                  </Text>
+                </VStack>
+              ))}
+            </SimpleGrid>
+          </Container>
+        </Box>
+      </section>
     </>
   );
 };

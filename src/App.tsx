@@ -7,6 +7,7 @@ import ScheduleSection from "./components/ScheduleSection";
 import CoachesSection from "./components/CoachesSection";
 import GallerySection from "./components/GallerySection";
 import ContactSection from "./components/ContactSection";
+import Footer from "./components/Footer";
 
 const sections = [
   { id: "home", label: "Home" },
@@ -21,14 +22,23 @@ const sections = [
 function App() {
   return (
     <>
-      <Navbar sections={sections}></Navbar>
-      <HomeSection />
-      <AboutSection />
-      <ProgramsSection />
-      <ScheduleSection />
-      <CoachesSection />
-      <GallerySection />
-      <ContactSection />
+      <header>
+        <Navbar sections={sections}></Navbar>
+      </header>
+
+      <main>
+        <HomeSection />
+        <AboutSection />
+        <ProgramsSection />
+        <ScheduleSection />
+        <CoachesSection />
+        <GallerySection />
+        <ContactSection />
+      </main>
+
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }

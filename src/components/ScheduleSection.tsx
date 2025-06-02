@@ -19,52 +19,56 @@ const ScheduleSection = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Training Schedule - Sharks Swimming Club Eswatini</title>
-        <meta
-          name="description"
-          content="Check the Sharks Swimming Club Eswatini training schedule for weekly practice times."
-        />
-      </Helmet>
+      <section id="schedule" aria-labelledby="schedule-heading">
+        <Helmet>
+          <title>Training Schedule - Sharks Swimming Club Eswatini</title>
+          <meta
+            name="description"
+            content="Check the Sharks Swimming Club Eswatini training schedule for weekly practice times."
+          />
+        </Helmet>
 
-      <Box
-        id="schedule"
-        py={20}
-        px={6}
-        //maxW="600px"
-        mx="auto"
-        bg={bg}
-        color={color}
-        textAlign="center"
-      >
-        <Container maxW="600px" px={6}>
-          <Heading fontFamily="Raleway, sans-serif" mb={6}>
-            Training Schedule
-          </Heading>
-          <Table.Root color={color} size="md" width="100%">
-            <Table.Header>
-              <Table.Row>
-                <Table.ColumnHeader fontFamily="Roboto Slab, serif">
-                  Day
-                </Table.ColumnHeader>
-                <Table.ColumnHeader fontFamily="Roboto Slab, serif">
-                  Time
-                </Table.ColumnHeader>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              {schedule.map(({ day, time }) => (
-                <Table.Row key={day}>
-                  <Table.Cell fontFamily="Roboto Slab, serif">{day}</Table.Cell>
-                  <Table.Cell fontFamily="Roboto Slab, serif">
-                    {time}
-                  </Table.Cell>
+        <Box
+          id="schedule"
+          py={20}
+          px={6}
+          //maxW="600px"
+          mx="auto"
+          bg={bg}
+          color={color}
+          textAlign="center"
+        >
+          <Container maxW="600px" px={6}>
+            <Heading fontFamily="Raleway, sans-serif" mb={6}>
+              Training Schedule
+            </Heading>
+            <Table.Root color={color} size="md" width="100%">
+              <Table.Header>
+                <Table.Row>
+                  <Table.ColumnHeader fontFamily="Roboto Slab, serif">
+                    Day
+                  </Table.ColumnHeader>
+                  <Table.ColumnHeader fontFamily="Roboto Slab, serif">
+                    Time
+                  </Table.ColumnHeader>
                 </Table.Row>
-              ))}
-            </Table.Body>
-          </Table.Root>
-        </Container>
-      </Box>
+              </Table.Header>
+              <Table.Body>
+                {schedule.map(({ day, time }) => (
+                  <Table.Row key={day}>
+                    <Table.Cell fontFamily="Roboto Slab, serif">
+                      {day}
+                    </Table.Cell>
+                    <Table.Cell fontFamily="Roboto Slab, serif">
+                      {time}
+                    </Table.Cell>
+                  </Table.Row>
+                ))}
+              </Table.Body>
+            </Table.Root>
+          </Container>
+        </Box>
+      </section>
     </>
   );
 };

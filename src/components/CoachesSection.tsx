@@ -27,55 +27,57 @@ const CoachesSection = () => {
   const color = theme === "dark" ? "#CBD5E0" : "#2D3748";
   return (
     <>
-      <Helmet>
-        <title>Our Coach - Sharks Swimming Club Eswatini</title>
-        <meta
-          name="description"
-          content="Meet the experienced coach for Sharks Swimming Club Eswatini."
-        />
-      </Helmet>
+      <section id="coaches" aria-labelledby="coaches-heading">
+        <Helmet>
+          <title>Our Coach - Sharks Swimming Club Eswatini</title>
+          <meta
+            name="description"
+            content="Meet the experienced coach for Sharks Swimming Club Eswatini."
+          />
+        </Helmet>
 
-      <Box id="coach" py={20} px={6} mx="auto" bg={bg} color={color}>
-        <Container maxW="600px" px={6}>
-          <Heading fontFamily="Raleway, sans-serif" mb={8} textAlign="center">
-            Meet Our Coach
-          </Heading>
-          <SimpleGrid columns={{ base: 1, md: 1 }}>
-            {coaches.map(({ name, bio, photo }) => (
-              <VStack
-                key={name}
-                borderWidth="1px"
-                borderRadius="md"
-                p={6}
-                align="center"
-                bg={theme === "dark" ? "#1A202C" : "white"}
-              >
-                <Image
-                  borderRadius="full"
-                  boxSize="150px"
-                  src={photo}
-                  alt={name}
-                  objectFit="cover"
-                />
-                <Heading
-                  color={color}
-                  fontFamily="Raleway, sans-serif"
-                  size="md"
+        <Box id="coach" py={20} px={6} mx="auto" bg={bg} color={color}>
+          <Container maxW="600px" px={6}>
+            <Heading fontFamily="Raleway, sans-serif" mb={8} textAlign="center">
+              Meet Our Coach
+            </Heading>
+            <SimpleGrid columns={{ base: 1, md: 1 }}>
+              {coaches.map(({ name, bio, photo }) => (
+                <VStack
+                  key={name}
+                  borderWidth="1px"
+                  borderRadius="md"
+                  p={6}
+                  align="center"
+                  bg={theme === "dark" ? "#1A202C" : "white"}
                 >
-                  {name}
-                </Heading>
-                <Text
-                  color={color}
-                  fontFamily="Roboto Slab, serif"
-                  textAlign="center"
-                >
-                  {bio}
-                </Text>
-              </VStack>
-            ))}
-          </SimpleGrid>
-        </Container>
-      </Box>
+                  <Image
+                    borderRadius="full"
+                    boxSize="150px"
+                    src={photo}
+                    alt={name}
+                    objectFit="cover"
+                  />
+                  <Heading
+                    color={color}
+                    fontFamily="Raleway, sans-serif"
+                    size="md"
+                  >
+                    {name}
+                  </Heading>
+                  <Text
+                    color={color}
+                    fontFamily="Roboto Slab, serif"
+                    textAlign="center"
+                  >
+                    {bio}
+                  </Text>
+                </VStack>
+              ))}
+            </SimpleGrid>
+          </Container>
+        </Box>
+      </section>
     </>
   );
 };

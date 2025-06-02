@@ -26,68 +26,73 @@ const HomeSection = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Sharks Swimming Club Eswatini - Swim Lessons and Training</title>
-        <meta
-          name="description"
-          content="Join Sharks Swimming Club Eswatini for lessons on how to swim,expert coaching, competitive training, and community development in swimming."
-        />
-        <meta property="og:title" content="Sharks Swimming Club Eswatini" />
-        <meta
-          property="og:description"
-          content="Swimming club in Eswatini offering professional training for all ages and skill levels."
-        />
-        <meta property="og:image" content="/Sharks_logo_up.png" />
-        <meta property="og:url" content="https://your-site.vercel.app" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Helmet>
+      <section id="home" aria-labelledby="home-heading">
+        <Helmet>
+          <title>
+            Sharks Swimming Club Eswatini - Swim Lessons and Training
+          </title>
+          <meta
+            name="description"
+            content="Join Sharks Swimming Club Eswatini for lessons on how to swim,expert coaching, competitive training, and community development in swimming."
+          />
+          <meta property="og:title" content="Sharks Swimming Club Eswatini" />
+          <meta
+            property="og:description"
+            content="Swimming club in Eswatini offering professional training for all ages and skill levels."
+          />
+          <meta property="og:image" content="/Sharks_logo_up.png" />
+          <meta property="og:url" content="https://your-site.vercel.app" />
+          <meta name="twitter:card" content="summary_large_image" />
+        </Helmet>
 
-      <Box
-        id="home"
-        minH="100vh"
-        bgImage={`url(${images[bgIndex]})`}
-        //bgPosition="center"
-        bgRepeat="no-repeat"
-        bgSize="cover"
-        color="white"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        px={6}
-        transition="background-image 1s ease-in-out"
-        position="relative"
-        _before={{
-          content: '""',
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          bg: "rgba(0, 0, 0, 0.4)", // dark overlay for text readability
-          zIndex: 0,
-        }}
-      >
-        <VStack
-          maxW="1200px"
-          textAlign="center"
-          //spacing={6}
-          zIndex={1}
+        <Box
+          id="home"
+          minH="100vh"
+          bgImage={`url(${images[bgIndex]})`}
+          //bgPosition="center"
+          bgRepeat="no-repeat"
+          bgSize="cover"
+          color="white"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          px={6}
+          transition="background-image 1s ease-in-out"
           position="relative"
+          _before={{
+            content: '""',
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            bg: "rgba(0, 0, 0, 0.4)", // dark overlay for text readability
+            zIndex: 0,
+          }}
         >
-          <Heading
-            fontSize={{ base: "3xl", md: "5xl" }}
-            fontFamily="Raleway, sans-serif"
+          <VStack
+            maxW="1200px"
+            textAlign="center"
+            //spacing={6}
+            zIndex={1}
+            position="relative"
           >
-            Welcome to Sharks Swimming Club Eswatini
-          </Heading>
-          <Text
-            fontSize={{ base: "md", md: "lg" }}
-            fontFamily="Roboto Slab, serif"
-          >
-            Dive into excellence with our expert coaching and vibrant community.
-          </Text>
-        </VStack>
-      </Box>
+            <Heading
+              fontSize={{ base: "3xl", md: "5xl" }}
+              fontFamily="Raleway, sans-serif"
+            >
+              Welcome to Sharks Swimming Club Eswatini
+            </Heading>
+            <Text
+              fontSize={{ base: "md", md: "lg" }}
+              fontFamily="Roboto Slab, serif"
+            >
+              Dive into excellence with our expert coaching and vibrant
+              community.
+            </Text>
+          </VStack>
+        </Box>
+      </section>
     </>
   );
 };

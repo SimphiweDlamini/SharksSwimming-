@@ -9,7 +9,7 @@ interface NavbarProps {
 }
 const Navbar: React.FC<NavbarProps> = ({ sections }) => {
   const { theme, setTheme } = useNextTheme();
-  const bg = theme === "dark" ? "#1A202C" : "#FFFFFF";
+  //const bg = theme === "dark" ? "#1A202C" : "#FFFFFF";
   const handleScroll = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -17,7 +17,7 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
     }
   };
   return (
-    <Box position="sticky" top="0" bg={bg} zIndex="1000" boxShadow="md">
+    <Box position="sticky" top="0" bg="green.400" zIndex="1000" boxShadow="md">
       <Flex
         maxW="1200px"
         mx="auto"
@@ -27,7 +27,7 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
         justify="space-between"
       >
         <Image
-          src="/eswatini-swimming-logo.png"
+          src="/Sharks_logo_up.png"
           alt="default"
           borderRadius="md"
           objectFit="fill"
@@ -42,18 +42,20 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
           fontFamily="Raleway, sans-serif"
           cursor="pointer"
           onClick={() => handleScroll("home")}
+          color="green.900"
         >
           Sharks Swimming Club Eswatini
         </Box>
         <Flex gap={6}>
           {sections.map(({ id, label }) => (
             <Link
+              color="green.900"
               key={id}
               onClick={() => handleScroll(id)}
               cursor="pointer"
               fontWeight="medium"
               fontFamily="Roboto Slab, serif"
-              _hover={{ color: "teal.500" }}
+              _hover={{ color: "blue.500" }}
             >
               {label}
             </Link>

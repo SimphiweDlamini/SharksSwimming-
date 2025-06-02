@@ -27,7 +27,7 @@ const CoachesSection = () => {
   const color = theme === "dark" ? "#CBD5E0" : "#2D3748";
   return (
     <>
-      <section id="coaches" aria-labelledby="coaches-heading">
+      <section id="coach" aria-labelledby="coaches-heading">
         <Helmet>
           <title>Our Coach - Sharks Swimming Club Eswatini</title>
           <meta

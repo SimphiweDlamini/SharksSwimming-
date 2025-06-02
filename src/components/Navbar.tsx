@@ -56,6 +56,8 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
           <Flex gap={6}>
             {sections.map(({ id, label }) => (
               <Link
+                as="a"
+                href={`#${id}`}
                 color="green.900"
                 key={id}
                 onClick={() => handleScroll(id)}

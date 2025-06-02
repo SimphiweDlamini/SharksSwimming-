@@ -21,7 +21,6 @@ const ScheduleSection = () => {
     <>
       <section id="schedule" aria-labelledby="schedule-heading">
         <Helmet>
-          <title>Training Schedule - Sharks Swimming Club Eswatini</title>
           <meta
             name="description"
             content="Check the Sharks Swimming Club Eswatini training schedule for weekly practice times."

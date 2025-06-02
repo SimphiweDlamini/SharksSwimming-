@@ -25,7 +25,6 @@ const ContactSection = () => {
     <>
       <section id="contact" aria-labelledby="contact-heading">
         <Helmet>
-          <title>Contact Us - Sharks Swimming Club Eswatini</title>
           <meta
             name="description"
             content="Contact Sharks Swimming Club Eswatini for membership, training, or event inquiries."

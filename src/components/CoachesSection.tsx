@@ -29,7 +29,6 @@ const CoachesSection = () => {
     <>
       <section id="coach" aria-labelledby="coaches-heading">
         <Helmet>
-          <title>Our Coach - Sharks Swimming Club Eswatini</title>
           <meta
             name="description"
             content="Meet the experienced coach for Sharks Swimming Club Eswatini."

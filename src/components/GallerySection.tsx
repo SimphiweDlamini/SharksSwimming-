@@ -29,7 +29,6 @@ const GallerySection = () => {
     <>
       <section id="gallery" aria-labelledby="gallery-heading">
         <Helmet>
-          <title>Gallery - Sharks Swimming Club Eswatini</title>
           <meta
             name="description"
             content="View photos of our swimmers, events, and training sessions at Sharks Swimming Club Eswatini."

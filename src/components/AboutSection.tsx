@@ -14,7 +14,6 @@ const AboutSection = () => {
     <>
       <section id="about" aria-labelledby="about-heading">
         <Helmet>
-          <title>About Us - Sharks Swimming Club Eswatini</title>
           <meta
             name="description"
             content="Learn about Sharks Swimming Club's history, mission, and coaching team in Eswatini"

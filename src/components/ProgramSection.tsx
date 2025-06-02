@@ -38,7 +38,6 @@ const ProgramsSection = () => {
     <>
       <section id="programs" aria-labelledby="programs-heading">
         <Helmet>
-          <title>Swim Programs - Sharks Swimming Club Eswatini</title>
           <meta
             name="description"
             content="Explore our swimming programs for all ages and skill levels in Eswatini"

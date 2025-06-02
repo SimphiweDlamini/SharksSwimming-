@@ -1,4 +1,11 @@
-import { Box, Heading, SimpleGrid, Image, Container } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  SimpleGrid,
+  Image,
+  Container,
+  Text,
+} from "@chakra-ui/react";
 import "@fontsource/raleway/400.css";
 import "@fontsource/roboto-slab/400.css";
 import { useTheme as useNextTheme } from "next-themes";
@@ -40,6 +47,7 @@ const GallerySection = () => {
         >
           <Container maxW="1000px" px={6}>
             <Heading
+              as="h2"
               fontFamily="Raleway, sans-serif"
               mb={8}
               textAlign="center"
@@ -47,6 +55,11 @@ const GallerySection = () => {
             >
               Gallery
             </Heading>
+            <Text paddingBottom={4} fontSize="lg">
+              Explore photos from our swimming lessons, competitions, and
+              community events in Eswatini. See our swimmers in action and get
+              inspired to join Sharks Swimming Club!
+            </Text>
             <SimpleGrid
               columnGap={3}
               rowGap={2}

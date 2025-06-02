@@ -55,9 +55,21 @@ const ProgramsSection = () => {
           color={color}
         >
           <Container maxW="900px" px={6}>
-            <Heading fontFamily="Raleway, sans-serif" mb={8} textAlign="center">
-              Our Programs
+            <Heading
+              as="h2"
+              fontFamily="Raleway, sans-serif"
+              mb={8}
+              textAlign="center"
+            >
+              Our Swimming Programs
             </Heading>
+            <Text paddingBottom={3} fontSize="lg">
+              We offer a range of swimming programs in Eswatini, including
+              beginner classes, advanced training, and competitive squads.
+              Whether you are looking for{" "}
+              <strong>swimming lessons for children</strong>, adult classes, or
+              elite coaching, Sharks Swimming Club has a program for you.
+            </Text>
             <SimpleGrid columnGap={3} columns={{ base: 1, md: 3 }}>
               {programs.map(({ title, description }) => (
                 <VStack

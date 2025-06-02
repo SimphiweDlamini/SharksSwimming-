@@ -1,4 +1,4 @@
-import { Table, Box, Heading, Container } from "@chakra-ui/react";
+import { Table, Box, Heading, Container, Text } from "@chakra-ui/react";
 import "@fontsource/raleway/400.css";
 import "@fontsource/roboto-slab/400.css";
 import { useTheme as useNextTheme } from "next-themes";
@@ -39,9 +39,15 @@ const ScheduleSection = () => {
           textAlign="center"
         >
           <Container maxW="600px" px={6}>
-            <Heading fontFamily="Raleway, sans-serif" mb={6}>
+            <Heading as="h2" fontFamily="Raleway, sans-serif" mb={6}>
               Training Schedule
             </Heading>
+            <Text paddingBottom={5} fontSize="lg">
+              Check out our schedule for{" "}
+              <strong>swimming lessons in Eswatini</strong>. We offer flexible
+              class times for different age groups and skill levels, making it
+              easy for everyone to join and improve their swimming abilities.
+            </Text>
             <Table.Root color={color} size="md" width="100%">
               <Table.Header>
                 <Table.Row>

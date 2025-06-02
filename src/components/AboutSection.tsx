@@ -32,18 +32,20 @@ const AboutSection = () => {
           width="100%"
         >
           <Container maxW="800px" px={6}>
-            <Heading fontFamily="Raleway, sans-serif" mb={4}>
-              About Us
+            <Heading as="h2" fontFamily="Raleway, sans-serif" mb={4}>
+              About Sharks Swimming Club Eswatini
             </Heading>
             <Text
               fontFamily="Roboto Slab, serif"
               fontSize="lg"
               lineHeight="tall"
             >
-              Sharks Swimming Club is dedicated to nurturing swimmers of all
-              ages and skill levels. Founded in 2005, we pride ourselves on
-              fostering a supportive and competitive environment where every
-              swimmer can thrive.
+              Founded in 2005, Sharks Swimming Club is dedicated to nurturing
+              swimmers of all skill levels in Eswatini. Our mission is to
+              promote swimming as a life skill and a competitive sport, offering{" "}
+              <strong> coaching</strong>, safe facilities, and a welcoming
+              environment for everyone interested in{" "}
+              <strong>swimming lessons in Eswatini</strong>.
             </Text>
           </Container>
         </Box>

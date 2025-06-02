@@ -80,6 +80,7 @@ const HomeSection = () => {
             <Heading
               fontSize={{ base: "3xl", md: "5xl" }}
               fontFamily="Raleway, sans-serif"
+              as="h1"
             >
               Welcome to Sharks Swimming Club Eswatini
             </Heading>
@@ -87,8 +88,10 @@ const HomeSection = () => {
               fontSize={{ base: "md", md: "lg" }}
               fontFamily="Roboto Slab, serif"
             >
-              Dive into excellence with our expert coaching and vibrant
-              community.
+              Welcome to <strong>Sharks Swimming Club Eswatini</strong>! We
+              provide <strong>swimming lessons in Eswatini</strong> for all ages
+              and abilities. Join our club to learn from certified coaches and
+              become a confident swimmer in a supportive community.
             </Text>
           </VStack>
         </Box>

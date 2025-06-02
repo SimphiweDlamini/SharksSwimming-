@@ -38,9 +38,20 @@ const CoachesSection = () => {
 
         <Box id="coach" py={20} px={6} mx="auto" bg={bg} color={color}>
           <Container maxW="600px" px={6}>
-            <Heading fontFamily="Raleway, sans-serif" mb={8} textAlign="center">
+            <Heading
+              as="h2"
+              fontFamily="Raleway, sans-serif"
+              mb={8}
+              textAlign="center"
+            >
               Meet Our Coach
             </Heading>
+            <Text paddingBottom={4} fontSize="lg">
+              Years of experience teaching{" "}
+              <strong>swimming lessons in Eswatini</strong>. Dedicated to
+              helping each swimmer reach their full potential in a safe and
+              supportive environment.
+            </Text>
             <SimpleGrid columns={{ base: 1, md: 1 }}>
               {coaches.map(({ name, bio, photo }) => (
                 <VStack

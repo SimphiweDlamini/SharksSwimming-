@@ -48,6 +48,7 @@ const ContactSection = () => {
         >
           <Container maxW="600px" px={6}></Container>
           <Heading
+            as="h2"
             fontFamily="Raleway, sans-serif"
             mb={6}
             color="gray.800"
@@ -60,6 +61,11 @@ const ContactSection = () => {
             color="gray.700"
             _dark={{ color: "gray.300" }}
           >
+            <Text paddingBottom={4} maxW="600px" fontSize="lg">
+              Ready to start your <strong>swimming lessons in Eswatini</strong>?
+              Contact Sharks Swimming Club today to enroll or ask any questions.
+              We look forward to hearing from you!
+            </Text>
             <HStack>
               <Icon as={FaPhone} color="teal.500" boxSize={5} />
               <Spacer />

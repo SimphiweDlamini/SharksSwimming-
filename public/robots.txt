@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://your-site.vercel.app/sitemap.xml
+Sitemap: https://sharks-swimming-club.vercel.app/sitemap.xml

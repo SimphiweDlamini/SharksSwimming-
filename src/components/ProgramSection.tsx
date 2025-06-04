@@ -69,7 +69,7 @@ const ProgramsSection = () => {
               <strong>swimming lessons for children</strong>, adult classes, or
               elite coaching, Sharks Swimming Club has a program for you.
             </Text>
-            <SimpleGrid columnGap={3} columns={{ base: 1, md: 3 }}>
+            <SimpleGrid columnGap={3} rowGap={2} columns={{ base: 1, md: 3 }}>
               {programs.map(({ title, description }) => (
                 <VStack
                   key={title}

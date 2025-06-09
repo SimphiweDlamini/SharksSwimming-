@@ -36,7 +36,8 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
   return (
     <nav aria-label="Main navigation">
       <Box
-        position="sticky"
+        position="fixed"
+        width="100%"
         top="0"
         bg="green.400"
         zIndex="1000"

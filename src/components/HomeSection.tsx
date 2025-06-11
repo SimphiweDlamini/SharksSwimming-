@@ -11,6 +11,7 @@ const images = [
   "/swim4.jpg",
   "/swim5.jpg",
   "/swim6.jpg",
+  "/swim7.jpg",
 ];
 
 const HomeSection = () => {
@@ -41,7 +42,10 @@ const HomeSection = () => {
             content="Swimming club in Eswatini offering professional training for all ages and skill levels."
           />
           <meta property="og:image" content="/Sharks_logo_up.png" />
-          <meta property="og:url" content="https://your-site.vercel.app" />
+          <meta
+            property="og:url"
+            content="https://sharks-swimming-club.vercel.app"
+          />
           <meta name="twitter:card" content="summary_large_image" />
         </Helmet>
 

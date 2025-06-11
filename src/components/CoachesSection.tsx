@@ -67,6 +67,7 @@ const CoachesSection = () => {
                     src={photo}
                     alt={name}
                     objectFit="cover"
+                    objectPosition="left"
                   />
                   <Heading
                     color={color}

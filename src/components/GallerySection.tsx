@@ -133,9 +133,9 @@ const GallerySection = () => {
               alignItems="center"
               justifyContent="center"
               position="relative"
-              maxW="100vw"
-              maxH="100vh"
-              p={0}
+              maxW={{ base: "95vw", md: "90vw" }}
+              maxH={{ base: "80vh", md: "90vh" }}
+              p={{ base: 2, md: 0 }}
               onClick={handleClose}
             >
               {/* Close Button */}

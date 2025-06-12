@@ -92,10 +92,11 @@ const HomeSection = () => {
               fontSize={{ base: "md", md: "lg" }}
               fontFamily="Roboto Slab, serif"
             >
-              Welcome to <strong>Sharks Swimming Club Eswatini</strong>! We
-              provide <strong>swimming lessons in Eswatini</strong> for all ages
-              and abilities. Join our club to learn from certified coaches and
-              become a confident swimmer in a supportive community.
+              Welcome to <strong>Sharks Swim Club Eswatini</strong>! We provide{" "}
+              <strong>swim lessons in Eswatini</strong> for all ages and
+              abilities. Join our club to learn from a coach with over 30 years
+              experience and become a confident swimmer in a supportive
+              community
             </Text>
           </VStack>
         </Box>

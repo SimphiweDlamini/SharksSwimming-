@@ -37,6 +37,7 @@ const HomeSection = () => {
             content="Join Sharks Swimming Club Eswatini for lessons on how to swim,expert coaching, competitive training, and community development in swimming."
           />
           <meta property="og:title" content="Sharks Swimming Club Eswatini" />
+          <meta property="og:title" content="Sharks Swim Club Eswatini" />
           <meta
             property="og:description"
             content="Swimming club in Eswatini offering professional training for all ages and skill levels."

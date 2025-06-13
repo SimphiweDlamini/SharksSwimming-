@@ -26,6 +26,15 @@ const images = [
   "/swim5.jpg",
   "/swim6.jpg",
   "/swim7.jpg",
+  "/swim8.jpg",
+  "/swim9.jpg",
+  "/swim10.jpg",
+  "/swim11.jpg",
+  "/swim12.jpg",
+  "/swim13.jpg",
+  "/swim14.jpg",
+  "/swim15.jpg",
+  "/swim16.jpg",
 ];
 
 const visibleImages = images.slice(0, 6); // Show first 3 images in grid
@@ -94,7 +103,7 @@ const GallerySection = () => {
             >
               Gallery
             </Heading>
-            <Text paddingBottom={4} fontSize="lg">
+            <Text paddingBottom={4} fontSize="lg" textAlign="center">
               Explore photos from our swimming lessons, competitions, and
               community events in Eswatini. See our swimmers in action and get
               inspired to join Sharks Swimming Club!

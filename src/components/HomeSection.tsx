@@ -12,6 +12,15 @@ const images = [
   "/swim5.jpg",
   "/swim6.jpg",
   "/swim7.jpg",
+  "/swim8.jpg",
+  "/swim9.jpg",
+  "/swim10.jpg",
+  "/swim11.jpg",
+  "/swim12.jpg",
+  "/swim13.jpg",
+  "/swim14.jpg",
+  "/swim15.jpg",
+  "/swim16.jpg",
 ];
 
 const HomeSection = () => {

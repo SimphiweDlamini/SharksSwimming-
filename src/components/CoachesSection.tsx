@@ -15,7 +15,7 @@ import { Helmet } from "react-helmet-async";
 const coaches = [
   {
     name: "Chris Stapley",
-    bio: "Specializes in technique and endurance training.",
+    bio: "Sharks Coach With Over 30 Years Experience.",
     photo: "/coach1.jpg",
   },
 ];
@@ -36,7 +36,7 @@ const CoachesSection = () => {
         </Helmet>
 
         <Box id="coach" py={20} px={6} mx="auto" bg={bg} color={color}>
-          <Container maxW="600px" px={6}>
+          <Container maxW="900px" px={6}>
             <Heading
               as="h2"
               fontFamily="Raleway, sans-serif"
@@ -45,13 +45,12 @@ const CoachesSection = () => {
             >
               Meet Our Coach
             </Heading>
-            <Text paddingBottom={4} fontSize="lg">
-              Years of experience teaching{" "}
-              <strong>swimming lessons in Eswatini</strong>. Dedicated to
-              helping each swimmer reach their full potential in a safe and
-              supportive environment.
-            </Text>
-            <SimpleGrid columns={{ base: 1, md: 1 }}>
+            <SimpleGrid
+              maxW="600px"
+              justifySelf="center"
+              columns={{ base: 1, md: 1 }}
+              paddingBottom={5}
+            >
               {coaches.map(({ name, bio, photo }) => (
                 <VStack
                   key={name}
@@ -86,6 +85,33 @@ const CoachesSection = () => {
                 </VStack>
               ))}
             </SimpleGrid>
+            <Text paddingBottom={4} fontSize="lg">
+              With{" "}
+              <strong>over 30 years of coaching and teaching experience</strong>
+              , Chris has instructed adults and children of all ages and
+              abilities. He represented eSwatini in swimming at the{" "}
+              <strong>1986 Commonwealth Games</strong> and has{" "}
+              <strong>never stopped competing</strong>, remaining active,
+              especially in the 'Open Water' arena.
+              <br />
+              <br />
+              Over the years, Sharks swimmers have thrived, competing in local
+              and regional competitions, as well as global events like the{" "}
+              <strong>
+                Olympics, World Championships, Commonwealth Games, and
+                All-Africa Games
+              </strong>
+              .
+              <br />
+              <br />
+              In 1997, Coach Chris made a pivotal decision: to dedicate himself
+              fully to teaching the sport he loves. That was{" "}
+              <strong>28 years ago</strong>, and {""}
+              <strong>
+                countless children and adults have since benefited
+              </strong>{" "}
+              from his unwavering dedication and expertise.
+            </Text>
           </Container>
         </Box>
       </section>

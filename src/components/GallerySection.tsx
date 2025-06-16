@@ -35,6 +35,11 @@ const images = [
   "/swim14.jpg",
   "/swim15.jpg",
   "/swim16.jpg",
+  "/swim17.jpg",
+  "/swim18.jpg",
+  "/swim19.jpg",
+  "/swim20.jpg",
+  "/swim21.jpg",
 ];
 
 const visibleImages = images.slice(0, 6); // Show first 3 images in grid

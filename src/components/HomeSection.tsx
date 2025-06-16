@@ -21,6 +21,11 @@ const images = [
   "/swim14.jpg",
   "/swim15.jpg",
   "/swim16.jpg",
+  "/swim17.jpg",
+  "/swim18.jpg",
+  "/swim19.jpg",
+  "/swim20.jpg",
+  "/swim21.jpg",
 ];
 
 const HomeSection = () => {
@@ -47,6 +52,8 @@ const HomeSection = () => {
           />
           <meta property="og:title" content="Sharks Swimming Club Eswatini" />
           <meta property="og:title" content="Sharks Swim Club Eswatini" />
+          <meta property="og:title" content="Sharks Swimming Club Swaziland" />
+          <meta property="og:title" content="Sharks Swim Club Swaziland" />
           <meta
             property="og:description"
             content="Swimming club in Eswatini offering professional training for all ages and skill levels."

@@ -4,7 +4,7 @@ import "@fontsource/roboto-slab/400.css";
 import { useTheme as useNextTheme } from "next-themes";
 import { Helmet } from "react-helmet-async";
 
-const ScheduleSection = () => {
+const OpenWaterSection = () => {
   const { theme } = useNextTheme();
 
   const bg = theme === "dark" ? "#1A202C" : "white";
@@ -12,16 +12,16 @@ const ScheduleSection = () => {
 
   return (
     <>
-      <section id="schedule" aria-labelledby="schedule-heading">
+      <section id="openwater" aria-labelledby="openwater-heading">
         <Helmet>
           <meta
             name="description"
-            content="Check the Sharks Swimming Club Eswatini training schedule for weekly practice times."
+            content="Check the Sharks Swimming Club Eswatini Open Water Activities and Events."
           />
         </Helmet>
 
         <Box
-          id="schedule"
+          id="openwater"
           py={20}
           px={6}
           //maxW="600px"
@@ -36,13 +36,13 @@ const ScheduleSection = () => {
               mb={6}
               textAlign="center"
             >
-              Lesson Schedule
+              Open Water Swimming
             </Heading>
             <Text paddingBottom={5} fontSize="lg">
-              Lesson's are on offer Monday - Saturdays, and classes cater for
-              all age groups and skill levels. Days and time's can be arranged
-              to fit all, making it easy for everyone to join and improve their
-              swimming ability
+              Shark's Coach Chris has over 15 years experience in both training
+              for and competing in open water events from South Africa to
+              Australia, Mozambique to Malawi. Luphohlo dam located 15 minutes
+              from Mbabane is the ideal place for open water swimming.
             </Text>
           </Container>
         </Box>
@@ -51,4 +51,4 @@ const ScheduleSection = () => {
   );
 };
 
-export default ScheduleSection;
+export default OpenWaterSection;

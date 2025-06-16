@@ -8,6 +8,7 @@ import CoachesSection from "./components/CoachesSection";
 import GallerySection from "./components/GallerySection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import OpenWaterSection from "./components/OpenWaterSection";
 
 const sections = [
   { id: "home", label: "Home" },
@@ -17,6 +18,7 @@ const sections = [
   { id: "coach", label: "Coach" },
   { id: "gallery", label: "Gallery" },
   { id: "contact", label: "Contact" },
+  { id: "openwater", label: "Open Water" },
 ];
 
 function App() {
@@ -33,6 +35,7 @@ function App() {
         <ScheduleSection />
         <CoachesSection />
         <GallerySection />
+        <OpenWaterSection />
         <ContactSection />
       </main>
 

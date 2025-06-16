@@ -10,6 +10,8 @@ import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import OpenWaterSection from "./components/OpenWaterSection";
 import MasterSection from "./components/MasterSection";
+import FacilitySection from "./components/FacilitySection";
+import CharitySection from "./components/CharitySection";
 
 const sections = [
   { id: "home", label: "Home" },
@@ -38,6 +40,8 @@ function App() {
         <GallerySection />
         <OpenWaterSection />
         <MasterSection />
+        <FacilitySection />
+        <CharitySection />
         <ContactSection />
       </main>
 

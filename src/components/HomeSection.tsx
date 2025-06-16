@@ -6,26 +6,26 @@ import { Helmet } from "react-helmet-async";
 
 const images = [
   "/swim1.jpg",
+  "/openwater1.jpg",
   "/swim2.jpg",
   "/swim3.jpg",
   "/swim4.jpg",
   "/swim5.jpg",
+  "/openwater2.jpg",
   "/swim6.jpg",
   "/swim7.jpg",
   "/swim8.jpg",
   "/swim9.jpg",
+  "/openwater3.jpg",
   "/swim10.jpg",
   "/swim11.jpg",
   "/swim12.jpg",
   "/swim13.jpg",
+  "/openwater4.jpg",
   "/swim14.jpg",
   "/swim15.jpg",
   "/swim16.jpg",
   "/swim17.jpg",
-  "/swim18.jpg",
-  "/swim19.jpg",
-  "/swim20.jpg",
-  "/swim21.jpg",
 ];
 
 const HomeSection = () => {

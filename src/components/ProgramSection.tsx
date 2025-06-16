@@ -32,8 +32,8 @@ const programs = [
 const ProgramsSection = () => {
   const { theme } = useNextTheme();
 
-  const bg = theme === "dark" ? "#2D3748" : "#EDF2F7";
-  const color = theme === "dark" ? "#CBD5E0" : "#2D3748";
+  const bg = theme === "dark" ? "#1A202C" : "white";
+  const color = theme === "dark" ? "#E2E8F0" : "#1A202C";
   return (
     <>
       <section id="programs" aria-labelledby="programs-heading">
@@ -77,10 +77,10 @@ const ProgramsSection = () => {
                   borderWidth="1px"
                   borderRadius="md"
                   align="start"
-                  bg={theme === "dark" ? "#1A202C" : "white"}
+                  bg={theme === "dark" ? "#2D3748" : "#EDF2F7"}
                 >
                   <Heading
-                    color={color}
+                    color={theme === "dark" ? "#CBD5E0" : "#2D3748"}
                     fontFamily="Raleway, sans-serif"
                     size="md"
                   >
@@ -92,6 +92,12 @@ const ProgramsSection = () => {
                 </VStack>
               ))}
             </SimpleGrid>
+            <Text paddingTop={5} fontSize="lg">
+              Lesson's are on offer Monday - Saturdays, and classes cater for
+              all age groups and skill levels. Days and time's can be arranged
+              to fit all, making it easy for everyone to join and improve their
+              swimming ability
+            </Text>
           </Container>
         </Box>
       </section>

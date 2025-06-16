@@ -36,10 +36,6 @@ const images = [
   "/swim15.jpg",
   "/swim16.jpg",
   "/swim17.jpg",
-  "/swim18.jpg",
-  "/swim19.jpg",
-  "/swim20.jpg",
-  "/swim21.jpg",
 ];
 
 const visibleImages = images.slice(0, 6); // Show first 3 images in grid
@@ -109,9 +105,11 @@ const GallerySection = () => {
               Gallery
             </Heading>
             <Text paddingBottom={4} fontSize="lg" textAlign="center">
-              Explore photos from our swimming lessons, competitions, and
-              community events in Eswatini. See our swimmers in action and get
-              inspired to join Sharks Swimming Club!
+              Explore photos from our{" "}
+              <strong>swimming lessons, competitions</strong>, and{" "}
+              <strong>community events</strong> in <strong>Eswatini</strong>.
+              See our swimmers in action and get inspired to join Sharks
+              Swimming Club!
             </Text>
             <SimpleGrid
               columnGap={3}

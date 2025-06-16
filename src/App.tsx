@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import HomeSection from "./components/HomeSection";
 import AboutSection from "./components/AboutSection";
 import ProgramsSection from "./components/ProgramSection";
-import ScheduleSection from "./components/ScheduleSection";
+//import ScheduleSection from "./components/ScheduleSection";
 import CoachesSection from "./components/CoachesSection";
 import GallerySection from "./components/GallerySection";
 import ContactSection from "./components/ContactSection";
@@ -12,12 +12,14 @@ import OpenWaterSection from "./components/OpenWaterSection";
 import MasterSection from "./components/MasterSection";
 import FacilitySection from "./components/FacilitySection";
 import CharitySection from "./components/CharitySection";
+import TeachersSection from "./components/TeachersSection";
+import KitSection from "./components/KitSection";
 
 const sections = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
   { id: "programs", label: "Programs" },
-  { id: "schedule", label: "Schedule" },
+  // { id: "schedule", label: "Schedule" },
   { id: "coach", label: "Coach" },
   { id: "gallery", label: "Gallery" },
   { id: "contact", label: "Contact" },
@@ -35,13 +37,14 @@ function App() {
         <HomeSection />
         <AboutSection />
         <ProgramsSection />
-        <ScheduleSection />
         <CoachesSection />
         <GallerySection />
         <OpenWaterSection />
         <MasterSection />
         <FacilitySection />
         <CharitySection />
+        <TeachersSection />
+        <KitSection />
         <ContactSection />
       </main>
 

@@ -7,8 +7,8 @@ import { Helmet } from "react-helmet-async";
 const AboutSection = () => {
   const { theme } = useNextTheme();
 
-  const bg = theme === "dark" ? "#1A202C" : "white";
-  const color = theme === "dark" ? "#E2E8F0" : "#1A202C";
+  const bg = theme === "dark" ? "#2D3748" : "#EDF2F7";
+  const color = theme === "dark" ? "#CBD5E0" : "#2D3748";
 
   return (
     <>

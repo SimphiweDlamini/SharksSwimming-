@@ -7,8 +7,8 @@ import { Helmet } from "react-helmet-async";
 const FacilitySection = () => {
   const { theme } = useNextTheme();
 
-  const bg = theme === "dark" ? "#1A202C" : "white";
-  const color = theme === "dark" ? "#E2E8F0" : "#1A202C";
+  const bg = theme === "dark" ? "#2D3748" : "#EDF2F7";
+  const color = theme === "dark" ? "#CBD5E0" : "#2D3748";
 
   return (
     <>
@@ -39,14 +39,18 @@ const FacilitySection = () => {
               Facility
             </Heading>
             <Text paddingBottom={5} fontSize="lg">
-              Our heated 3 lane 20m pool is situated in Ezulwini making it
-              easily accessible to Mbabane, Manzini, Malkern's and the valley
-              itself. We aim to offer a minimum 28°C water temperature
-              year-round. Our facility is the only fully heated out-door
-              facility in the Country. World Aquatic pool regulations ensure the
-              more competitive swimmer has access to correct starting blocks,
-              backstroke flags, and pool marking's, preparing them thoroughly
-              for possible competition both locally and over the border.
+              Our heated 3 lane, 20m pool is situated in{" "}
+              <strong>Ezulwini</strong> making it easily accessible to Mbabane,
+              Manzini, Malkern's and the valley itself. We aim to offer a
+              minimum 28°C water temperature year-round. Our facility is the
+              only <strong>fully heated out-door pool</strong> in the Country.
+              World Aquatic pool regulations ensure the more{" "}
+              <strong>competitive swimmer</strong> has access to correct{" "}
+              <strong>starting blocks</strong>,{" "}
+              <strong>backstroke flags</strong>, and{" "}
+              <strong>pool marking's</strong>., preparing them thoroughly for
+              possible <strong>competition</strong> both locally and over the
+              border.
             </Text>
           </Container>
         </Box>

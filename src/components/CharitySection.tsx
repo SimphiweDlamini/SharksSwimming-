@@ -39,11 +39,14 @@ const CharitySection = () => {
               Community/Charity Development
             </Heading>
             <Text paddingBottom={5} fontSize="lg">
-              Sharks club has initiated both charity and community events aimed
-              at helping out those less fortunate in our society. These include
-              kids coming to the pool for lessons as well as charity swims
+              <strong>Sharks Swim Club</strong> has initiated both{" "}
+              <strong>charity</strong> and <strong>community events</strong>{" "}
+              aimed at helping out those less fortunate in our society. These
+              include kids coming to the pool for <strong>lessons</strong> as
+              well as <strong>charity swims</strong>
               raising funds for OVC's, orphanages, SAWS etc. Giving back to and
-              supporting other's is a strong ethos of Sharks Swimming Club.
+              supporting other's is a strong ethos of{" "}
+              <strong>Sharks Swimming Club.</strong>
             </Text>
           </Container>
         </Box>

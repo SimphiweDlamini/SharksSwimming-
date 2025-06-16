@@ -4,7 +4,7 @@ import "@fontsource/roboto-slab/400.css";
 import { useTheme as useNextTheme } from "next-themes";
 import { Helmet } from "react-helmet-async";
 
-const OpenWaterSection = () => {
+const TeachersSection = () => {
   const { theme } = useNextTheme();
 
   const bg = theme === "dark" ? "#2D3748" : "#EDF2F7";
@@ -12,16 +12,16 @@ const OpenWaterSection = () => {
 
   return (
     <>
-      <section id="openwater" aria-labelledby="openwater-heading">
+      <section id="teacher" aria-labelledby="teacher-heading">
         <Helmet>
           <meta
             name="description"
-            content="Check the Sharks Swimming Club Eswatini Open Water Activities and Events."
+            content="Check the Sharks Swimming Club Eswatini training for upcoming teachers of Swimming."
           />
         </Helmet>
 
         <Box
-          id="openwater"
+          id="teacher"
           py={20}
           px={6}
           //maxW="600px"
@@ -36,16 +36,17 @@ const OpenWaterSection = () => {
               mb={6}
               textAlign="center"
             >
-              Open Water Swimming
+              Teacher's Swimming Course's
             </Heading>
             <Text paddingBottom={5} fontSize="lg">
-              Shark's Coach Chris has over <strong>15 years experience</strong>{" "}
-              in both training for and competing in{" "}
-              <strong>open water events</strong> from{" "}
-              <strong>South Africa</strong> to <strong>Australia</strong>,{" "}
-              <strong>Mozambique</strong> to <strong>Malawi</strong>. Luphohlo
-              dam located 15 minutes from Mbabane is the ideal place for open
-              water swimming.
+              Coach Chris has been running the '
+              <strong>Elementary Swim Course</strong>' in eSwatini for over 25
+              years. Many of today's swim teacher's and coaches have at some
+              time been tutored by him. This course is aimed at those club's,
+              school's , individuals who want to{" "}
+              <strong>learn how to teach swimming</strong>. This course is
+              hosted at Sharks Swim Club pool, and is recognised by the{" "}
+              <strong>Eswatini Swimming Association</strong>.
             </Text>
           </Container>
         </Box>
@@ -54,4 +55,4 @@ const OpenWaterSection = () => {
   );
 };
 
-export default OpenWaterSection;
+export default TeachersSection;

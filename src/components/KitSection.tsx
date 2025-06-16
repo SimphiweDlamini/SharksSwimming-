@@ -4,7 +4,7 @@ import "@fontsource/roboto-slab/400.css";
 import { useTheme as useNextTheme } from "next-themes";
 import { Helmet } from "react-helmet-async";
 
-const MasterSection = () => {
+const KitSection = () => {
   const { theme } = useNextTheme();
 
   const bg = theme === "dark" ? "#1A202C" : "white";
@@ -12,16 +12,16 @@ const MasterSection = () => {
 
   return (
     <>
-      <section id="master" aria-labelledby="master-heading">
+      <section id="kit" aria-labelledby="kit-heading">
         <Helmet>
           <meta
             name="description"
-            content="Check the Sharks Swimming Club Eswatini Masters and Adults Swimming."
+            content="Check the Sharks Swimming Club Eswatini Kit and Uniform."
           />
         </Helmet>
 
         <Box
-          id="master"
+          id="kit"
           py={20}
           px={6}
           //maxW="600px"
@@ -36,17 +36,11 @@ const MasterSection = () => {
               mb={6}
               textAlign="center"
             >
-              Adult/Master Swimmers
+              Kit and Uniform
             </Heading>
             <Text paddingBottom={5} fontSize="lg">
-              <strong>Sharks Swimming club</strong> offer's both an adult '
-              <strong>learn to swim</strong>' program and an adult training
-              group. Adults may also access the club's facilities Mon - Fri for
-              their own 'lap swimming' at a monthly fee. Adults recovering from
-              injuries/ surgery can also get help with 'aqua therapy, usually on
-              a one to one basis and can also join exercise classes. Sharks, '
-              <strong>Masters</strong>' swimmers have competed in numerous South
-              African Masters champs as well as World Champs.
+              Swim Caps, T-shirt's, Shorts, Long pants and Long Sleeve
+              T-shirt's, Towels for Sharks Swim Club
             </Text>
           </Container>
         </Box>
@@ -55,4 +49,4 @@ const MasterSection = () => {
   );
 };
 
-export default MasterSection;
+export default KitSection;

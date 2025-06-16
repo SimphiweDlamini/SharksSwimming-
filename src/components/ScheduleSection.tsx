@@ -38,12 +38,7 @@ const ScheduleSection = () => {
             >
               Lesson Schedule
             </Heading>
-            <Text paddingBottom={5} fontSize="lg">
-              Lesson's are on offer Monday - Saturdays, and classes cater for
-              all age groups and skill levels. Days and time's can be arranged
-              to fit all, making it easy for everyone to join and improve their
-              swimming ability
-            </Text>
+            <Text paddingBottom={5} fontSize="lg"></Text>
           </Container>
         </Box>
       </section>

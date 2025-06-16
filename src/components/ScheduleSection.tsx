@@ -1,15 +1,15 @@
-import { Table, Box, Heading, Container, Text } from "@chakra-ui/react";
+import { Box, Heading, Container, Text } from "@chakra-ui/react";
 import "@fontsource/raleway/400.css";
 import "@fontsource/roboto-slab/400.css";
 import { useTheme as useNextTheme } from "next-themes";
 import { Helmet } from "react-helmet-async";
 
-const schedule = [
-  { day: "Monday", time: "6:00 PM - 8:00 PM" },
-  { day: "Wednesday", time: "6:00 PM - 8:00 PM" },
-  { day: "Friday", time: "6:00 PM - 8:00 PM" },
-  { day: "Saturday", time: "9:00 AM - 12:00 PM" },
-];
+// const schedule = [
+//   { day: "Monday", time: "6:00 PM - 8:00 PM" },
+//   { day: "Wednesday", time: "6:00 PM - 8:00 PM" },
+//   { day: "Friday", time: "6:00 PM - 8:00 PM" },
+//   { day: "Saturday", time: "9:00 AM - 12:00 PM" },
+// ];
 
 const ScheduleSection = () => {
   const { theme } = useNextTheme();
@@ -35,19 +35,23 @@ const ScheduleSection = () => {
           mx="auto"
           bg={bg}
           color={color}
-          textAlign="center"
         >
           <Container maxW="600px" px={6}>
-            <Heading as="h2" fontFamily="Raleway, sans-serif" mb={6}>
-              Training Schedule
+            <Heading
+              as="h2"
+              fontFamily="Raleway, sans-serif"
+              mb={6}
+              textAlign="center"
+            >
+              Lesson Schedule
             </Heading>
             <Text paddingBottom={5} fontSize="lg">
-              Check out our schedule for{" "}
-              <strong>swimming lessons in Eswatini</strong>. We offer flexible
-              class times for different age groups and skill levels, making it
-              easy for everyone to join and improve their swimming abilities.
+              Lesson's are on offer Monday - Saturdays, and classes cater for
+              all age groups and skill levels. Days and time's can be arranged
+              to fit all, making it easy for everyone to join and improve their
+              swimming ability
             </Text>
-            <Table.Root color={color} size="md" width="100%">
+            {/* <Table.Root color={color} size="md" width="100%">
               <Table.Header>
                 <Table.Row>
                   <Table.ColumnHeader fontFamily="Roboto Slab, serif">
@@ -70,7 +74,7 @@ const ScheduleSection = () => {
                   </Table.Row>
                 ))}
               </Table.Body>
-            </Table.Root>
+            </Table.Root> */}
           </Container>
         </Box>
       </section>

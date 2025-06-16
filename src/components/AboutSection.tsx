@@ -39,12 +39,13 @@ const AboutSection = () => {
               fontSize="lg"
               lineHeight="tall"
             >
-              Founded in 2005, Sharks Swimming Club is dedicated to nurturing
-              swimmers of all skill levels in Eswatini. Our mission is to
-              promote swimming as a life skill and a competitive sport, offering{" "}
-              <strong> coaching</strong>, safe facilities, and a welcoming
-              environment for everyone interested in{" "}
-              <strong>swimming lessons in Eswatini</strong>.
+              Founded in the early 1990's,{" "}
+              <strong>Sharks swimming club </strong> is dedicated to nurturing
+              both children and adults in the art of swimming.Our mission is{" "}
+              <strong>promote water safety and swimming</strong> as a life skill
+              and competitive sport, offering coaching, safe heated facilities,
+              and a welcoming environment for everyone interested in swimming
+              lessons and keeping fit.
             </Text>
           </Container>
         </Box>

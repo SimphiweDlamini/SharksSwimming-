@@ -20,12 +20,12 @@ const programs = [
   {
     title: "Intermediate Program",
     description:
-      "Improve your strokes, endurance, and introduce competitive swimming.",
+      "Improve your strokes, endurance, and introduction to competitive swimming.",
   },
   {
     title: "Advanced Program",
     description:
-      "Train with our elite coaches to compete at local and national levels.",
+      "Train with our elite coach to compete at local and International level.",
   },
 ];
 

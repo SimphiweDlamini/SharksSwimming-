@@ -8,7 +8,9 @@ import {
   IconButton,
   VStack,
   HStack,
+  // Spacer is not needed with justifyContent="space-between" on parent
 } from "@chakra-ui/react";
+// Keeping Accordion and Menu imports for future flexibility, even if not used in this exact solution
 import {
   Accordion,
   AccordionItem,
@@ -43,10 +45,18 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
   const handleScroll = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      window.location.hash = id;
+      // Offset for fixed header
+      const yOffset = -NAVBAR_HEIGHT;
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+
+      // Update URL hash
+      if (typeof window !== "undefined") {
+        window.history.pushState(null, "", `#${id}`);
+      }
     }
-    setIsOpen(false);
+    setIsOpen(false); // Close mobile menu on navigation
   };
 
   return (
@@ -66,14 +76,17 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
           py={4}
           px={6}
           align="center"
-          justify="space-between"
+          justifyContent="space-between" // Crucial for distributing space
           height="100%"
+          gap={{ base: 4, md: 6 }} // Keep gap between major sections
         >
           {/* Logo and Title */}
           <HStack
             cursor="pointer"
             onClick={() => handleScroll("home")}
-            flexShrink={0}
+            flexShrink={0} // Prevents shrinking below content
+            // Let the text overflow handle its length
+            // minWidth="content" might also be used here
           >
             <Image
               src="/Sharks_logo_up.png"
@@ -85,15 +98,15 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
               w="40px"
             />
             <Box
-              flexShrink={1}
-              minWidth={0}
+              flexShrink={1} // Allow the text container to shrink
+              minWidth={0} // Allows the text content to overflow with ellipsis
               fontWeight="bold"
               fontSize={{ base: "xs", md: "sm", lg: "xl" }}
               fontFamily="Raleway, sans-serif"
               color="green.900"
-              whiteSpace="nowrap"
-              overflow="hidden"
-              textOverflow="ellipsis"
+              whiteSpace="nowrap" // Keep text on one line
+              overflow="hidden" // Hide overflowing text
+              textOverflow="ellipsis" // Add ellipsis for hidden text
               ml={2}
               paddingRight={3}
             >
@@ -101,91 +114,29 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
             </Box>
           </HStack>
 
-          {/* Desktop Links with Dropdown */}
+          {/* Desktop Navigation Links Container */}
+          {/* This Flex will grow to take available space and be scrollable */}
           <Flex
-            gap={4}
-            px={2}
+            flexGrow={1} // Allow this container to take up available space
+            flexShrink={1} // Allow it to shrink
+            minWidth={0} // Critical: Allows this flex item to shrink below its content's intrinsic width, enabling overflow
             display={{ base: "none", md: "flex" }}
             align="center"
-            position="relative"
-            zIndex={1200}
-            whiteSpace="nowrap"
+            // justifyContent="flex-end" // Not needed here, as parent justifyContent handles distribution
+            overflowX="auto" // Enable horizontal scrolling for this specific Flex
+            whiteSpace="nowrap" // Keep links on one line
+            py={1} // Small vertical padding for potential scrollbar
+            pr={4} // Padding on the right so the last link isn't cut off by the dark mode button
             css={{
-              /* Hide scrollbar for WebKit browsers */
-              "&::-webkit-scrollbar": { display: "none" },
-              /* Hide scrollbar for Firefox */
-              scrollbarWidth: "none",
+              "&::-webkit-scrollbar": { display: "none" }, // Hide scrollbar for WebKit
+              scrollbarWidth: "none", // Hide scrollbar for Firefox
+              // Optionally add some padding-left if you want space from the logo when scrolled left
+              // paddingLeft: '1rem',
             }}
           >
-            {sections.map(({ id, label, subsections }) =>
-              subsections ? (
-                <Box key={id} position="relative" flexShrink={0}>
-                  <MenuRoot>
-                    <MenuTrigger>
-                      <Button
-                        variant="ghost"
-                        cursor="pointer"
-                        fontWeight="medium"
-                        fontFamily="Roboto Slab, serif"
-                        color="green.900"
-                        bg="transparent"
-                        px={2}
-                        py={1}
-                        display="flex"
-                        alignItems="center"
-                        gap={1}
-                        _hover={{
-                          color: "blue.500",
-                          bg: "transparent",
-                          boxShadow: "none",
-                        }}
-                        _active={{
-                          bg: "transparent",
-                          boxShadow: "none",
-                        }}
-                        _focus={{
-                          bg: "transparent",
-                          boxShadow: "none",
-                        }}
-                      >
-                        {label}
-                        <HiChevronDown />
-                      </Button>
-                    </MenuTrigger>
-                    <MenuContent
-                      bg="white"
-                      color="green.900"
-                      boxShadow="lg"
-                      borderRadius="md"
-                      minW="180px"
-                      zIndex={2000}
-                      border="1px solid"
-                      borderColor="green.100"
-                      position="absolute"
-                      top="100%"
-                      left={0}
-                      mt={2}
-                    >
-                      {subsections.map(({ id: subId, label: subLabel }) => (
-                        <MenuItem
-                          key={subId}
-                          value={subId}
-                          onSelect={() => handleScroll(subId)}
-                          _hover={{ bg: "green.400", color: "white" }}
-                          fontFamily="Roboto Slab, serif"
-                          fontWeight="medium"
-                          fontSize="md"
-                          px={4}
-                          py={2}
-                          borderRadius="md"
-                        >
-                          {subLabel}
-                        </MenuItem>
-                      ))}
-                    </MenuContent>
-                  </MenuRoot>
-                </Box>
-              ) : (
+            {/* HStack for the actual links to manage their spacing */}
+            <HStack py={4}>
+              {sections.map(({ id, label }) => (
                 <Link
                   as="a"
                   href={`#${id}`}
@@ -199,21 +150,26 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
                   fontWeight="medium"
                   fontFamily="Roboto Slab, serif"
                   _hover={{ color: "blue.500" }}
-                  flexShrink={0}
+                  flexShrink={0} // Important: Prevent individual links from shrinking
+                  px={2}
+                  py={1}
                 >
                   {label}
                 </Link>
-              )
-            )}
-            <Button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              colorScheme="teal"
-              ml={2}
-              flexShrink={0}
-            >
-              {theme === "dark" ? "Light Mode" : "Dark Mode"}
-            </Button>
+              ))}
+            </HStack>
           </Flex>
+
+          {/* Dark Mode Button - always visible on desktop */}
+          <Button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            colorScheme="teal"
+            ml={{ base: 0, md: 4 }} // Margin left to separate from the scrollable links/logo
+            flexShrink={0} // Prevent shrinking
+            display={{ base: "none", md: "block" }} // Only show on desktop
+          >
+            {theme === "dark" ? "Light Mode" : "Dark Mode"}
+          </Button>
 
           {/* Hamburger Icon for Mobile */}
           <IconButton
@@ -223,6 +179,7 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
             bg="green.700"
             color="white"
             _hover={{ bg: "green.800" }}
+            ml={{ base: 4, md: 0 }} // Ensure spacing from logo on mobile
             flexShrink={0}
           >
             {isOpen ? <IoMdClose size={24} /> : <GiHamburgerMenu size={24} />}
@@ -230,7 +187,7 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
         </Flex>
       </Box>
 
-      {/* Mobile Menu rendered as fixed overlay with close button */}
+      {/* Mobile Menu rendered as fixed overlay */}
       {isOpen && (
         <Box
           bg="green.300"
@@ -246,8 +203,8 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
           zIndex="1500"
           overflowY="auto"
         >
-          {/* Close button at top right */}
-          <Flex justify="flex-end" mb={2}>
+          {/* Close button at top right of mobile menu (inside overlay) */}
+          <Flex justify="flex-end" mb={4} pr={0}>
             <IconButton
               aria-label="Close menu"
               size="lg"
@@ -257,84 +214,35 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
               _hover={{ bg: "green.100" }}
               onClick={() => setIsOpen(false)}
             >
-              <IoMdClose />
+              <IoMdClose size={28} />
             </IconButton>
           </Flex>
-          <VStack align="flex-start" px={2}>
-            <Accordion allowToggle width="100%">
-              {sections.map(({ id, label, subsections }) =>
-                subsections ? (
-                  <AccordionItem key={id} border="none">
-                    <h2>
-                      <AccordionButton
-                        px={0}
-                        fontWeight="medium"
-                        fontFamily="Roboto Slab, serif"
-                        color="green.900"
-                        _hover={{ color: "blue.500", bg: "green.100" }}
-                        bg="transparent"
-                      >
-                        <Box flex="1" textAlign="left">
-                          {label}
-                        </Box>
-                        <AccordionIcon />
-                      </AccordionButton>
-                    </h2>
-                    <AccordionPanel pl={4} pb={4}>
-                      <VStack align="flex-start" px={1}>
-                        {subsections.map(({ id: subId, label: subLabel }) => (
-                          <Link
-                            key={subId}
-                            as="a"
-                            href={`#${subId}`}
-                            color="green.900"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleScroll(subId);
-                              setIsOpen(false);
-                            }}
-                            fontWeight="medium"
-                            fontFamily="Roboto Slab, serif"
-                            fontSize="lg"
-                            _hover={{ color: "white", bg: "green.400" }}
-                            px={3}
-                            py={2}
-                            borderRadius="md"
-                            w="100%"
-                            display="block"
-                          >
-                            {subLabel}
-                          </Link>
-                        ))}
-                      </VStack>
-                    </AccordionPanel>
-                  </AccordionItem>
-                ) : (
-                  <Link
-                    as="a"
-                    href={`#${id}`}
-                    color="green.900"
-                    key={id}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleScroll(id);
-                      setIsOpen(false);
-                    }}
-                    fontWeight="medium"
-                    fontFamily="Roboto Slab, serif"
-                    fontSize="lg"
-                    _hover={{ color: "white", bg: "green.400" }}
-                    px={3}
-                    py={2}
-                    borderRadius="md"
-                    w="100%"
-                    display="block"
-                  >
-                    {label}
-                  </Link>
-                )
-              )}
-            </Accordion>
+          <VStack align="flex-start" px={0} py={2}>
+            {sections.map(({ id, label }) => (
+              <Link
+                as="a"
+                href={`#${id}`}
+                color="green.900"
+                key={id}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScroll(id);
+                  setIsOpen(false);
+                }}
+                fontWeight="medium"
+                fontFamily="Roboto Slab, serif"
+                fontSize="lg"
+                _hover={{ color: "white", bg: "green.400" }}
+                px={4}
+                py={3}
+                borderRadius="md"
+                w="100%"
+                display="block"
+                textAlign="left"
+              >
+                {label}
+              </Link>
+            ))}
 
             <Button
               onClick={() => {
@@ -343,6 +251,7 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
               }}
               colorScheme="teal"
               width="100%"
+              mt={4}
             >
               {theme === "dark" ? "Light Mode" : "Dark Mode"}
             </Button>

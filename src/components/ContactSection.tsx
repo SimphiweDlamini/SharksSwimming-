@@ -87,7 +87,7 @@ const ContactSection = () => {
               <Icon as={FaMapMarkerAlt} color="teal.500" boxSize={5} />
               <Spacer />
               <Text fontSize="lg">
-                123 Ocean Drive, Cape Town, South Africa
+                10 Mbondvo close, Mountain View Village, Ezulwini
               </Text>
             </HStack>
           </VStack>

@@ -11,15 +11,15 @@ import {
   // Spacer is not needed with justifyContent="space-between" on parent
 } from "@chakra-ui/react";
 // Keeping Accordion and Menu imports for future flexibility, even if not used in this exact solution
-import {
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-} from "@chakra-ui/accordion";
-import { MenuRoot, MenuTrigger, MenuContent, MenuItem } from "@chakra-ui/react";
-import { HiChevronDown } from "react-icons/hi";
+// import {
+//   Accordion,
+//   AccordionItem,
+//   AccordionButton,
+//   AccordionPanel,
+//   AccordionIcon,
+// } from "@chakra-ui/accordion";
+// import { MenuRoot, MenuTrigger, MenuContent, MenuItem } from "@chakra-ui/react";
+// import { HiChevronDown } from "react-icons/hi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { useTheme as useNextTheme } from "next-themes";

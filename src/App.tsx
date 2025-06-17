@@ -24,6 +24,7 @@ const sections = [
     id: "gallery",
     label: "Gallery",
     subsections: [
+      { id: "gallery", label: "View" },
       { id: "openwater", label: "Open Water" },
       { id: "master", label: "Masters / Adults" },
       { id: "facility", label: "Facility" },

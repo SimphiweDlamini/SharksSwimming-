@@ -88,13 +88,14 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
               flexShrink={1}
               minWidth={0}
               fontWeight="bold"
-              fontSize={{ base: "md", md: "sm", lg: "xl" }}
+              fontSize={{ base: "xs", md: "sm", lg: "xl" }}
               fontFamily="Raleway, sans-serif"
               color="green.900"
               whiteSpace="nowrap"
               overflow="hidden"
               textOverflow="ellipsis"
               ml={2}
+              paddingRight={3}
             >
               Sharks Swimming Club Eswatini
             </Box>
@@ -108,7 +109,6 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
             align="center"
             position="relative"
             zIndex={1200}
-            overflowX="auto"
             whiteSpace="nowrap"
             css={{
               /* Hide scrollbar for WebKit browsers */

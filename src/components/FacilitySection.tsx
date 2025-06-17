@@ -48,7 +48,7 @@ const FacilitySection = () => {
               <strong>competitive swimmer</strong> has access to correct{" "}
               <strong>starting blocks</strong>,{" "}
               <strong>backstroke flags</strong>, and{" "}
-              <strong>pool marking's</strong>., preparing them thoroughly for
+              <strong>pool marking's</strong>, preparing them thoroughly for
               possible <strong>competition</strong> both locally and over the
               border.
             </Text>

@@ -1,14 +1,70 @@
-import { Box, Heading, Container, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Container,
+  Text,
+  Stack,
+  Image,
+  SimpleGrid,
+  Dialog,
+  DialogBackdrop,
+  DialogContent,
+  DialogPositioner,
+  IconButton,
+} from "@chakra-ui/react";
 import "@fontsource/raleway/400.css";
 import "@fontsource/roboto-slab/400.css";
 import { useTheme as useNextTheme } from "next-themes";
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
+const images = ["/tshirts.jpg"];
+
+const visibleImages = images.slice(0, 1);
 
 const KitSection = () => {
   const { theme } = useNextTheme();
 
   const bg = theme === "dark" ? "#1A202C" : "white";
   const color = theme === "dark" ? "#E2E8F0" : "#1A202C";
+
+  const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
+  const [open, setOpen] = useState(false);
+
+  const openImage = (idx: number) => {
+    setSelectedIdx(idx);
+    setOpen(true);
+  };
+
+  const showPrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setSelectedIdx((prev) => {
+      if (prev === null) return 0;
+      return prev === 0 ? images.length - 1 : prev - 1;
+    });
+  };
+
+  const showNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setSelectedIdx((prev) => {
+      if (prev === null) return 0;
+      return prev === images.length - 1 ? 0 : prev + 1;
+    });
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setSelectedIdx(null);
+  };
+
+  // Correct onOpenChange handler signature for Chakra UI v3 Dialog
+  const handleOpenChange = (details: { open: boolean }) => {
+    setOpen(details.open);
+    if (!details.open) {
+      setSelectedIdx(null);
+    }
+  };
 
   return (
     <>
@@ -38,11 +94,105 @@ const KitSection = () => {
             >
               Kit and Uniform
             </Heading>
-            <Text paddingBottom={5} fontSize="lg">
-              Swim Caps, T-shirt's, Shorts, Long pants and Long Sleeve
-              T-shirt's, Towels for Sharks Swim Club
-            </Text>
+            <Stack direction={{ base: "column", sm: "row" }} px={4}>
+              <SimpleGrid columns={1}>
+                {visibleImages.map((src, idx) => (
+                  <Image
+                    key={idx}
+                    src={src}
+                    alt={`Kit ${idx + 1}`}
+                    borderRadius="md"
+                    objectFit="cover"
+                    boxShadow="md"
+                    maxH="600px"
+                    w="100%"
+                    cursor="pointer"
+                    onClick={() => openImage(idx)}
+                    transition="transform 0.2s"
+                    _hover={{ transform: "scale(1.03)" }}
+                  />
+                ))}
+              </SimpleGrid>
+              <Text paddingBottom={5} fontSize="lg" textAlign="right">
+                Swim Caps, T-shirt's, Shorts, Long pants and Long Sleeve
+                T-shirt's, Towels for Sharks Swim Club
+              </Text>
+            </Stack>
           </Container>
+
+          <Dialog.Root open={open} onOpenChange={handleOpenChange}>
+            <DialogBackdrop />
+            <DialogPositioner>
+              <DialogContent
+                bg="blackAlpha.900"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                position="relative"
+                maxW={{ base: "95vw", md: "90vw" }}
+                maxH={{ base: "80vh", md: "90vh" }}
+                p={{ base: 2, md: 0 }}
+                onClick={handleClose}
+              >
+                {/* Close Button */}
+                <IconButton
+                  aria-label="Close"
+                  position="absolute"
+                  top={4}
+                  right={4}
+                  onClick={handleClose}
+                  colorScheme="whiteAlpha"
+                  size="lg"
+                  zIndex={2}
+                >
+                  <FaTimes />
+                </IconButton>
+
+                {/* Previous Button */}
+                <IconButton
+                  aria-label="Previous"
+                  position="absolute"
+                  left={4}
+                  top="50%"
+                  transform="translateY(-50%)"
+                  onClick={showPrev}
+                  colorScheme="whiteAlpha"
+                  size="lg"
+                  zIndex={2}
+                >
+                  <FaChevronLeft />
+                </IconButton>
+
+                {/* Next Button */}
+                <IconButton
+                  aria-label="Next"
+                  position="absolute"
+                  right={4}
+                  top="50%"
+                  transform="translateY(-50%)"
+                  onClick={showNext}
+                  colorScheme="whiteAlpha"
+                  size="lg"
+                  zIndex={2}
+                >
+                  <FaChevronRight />
+                </IconButton>
+
+                {/* Displayed Image */}
+                {selectedIdx !== null && (
+                  <Image
+                    src={images[selectedIdx]}
+                    alt={`Kit image ${selectedIdx + 1}`}
+                    maxH="90vh"
+                    maxW="90vw"
+                    borderRadius="lg"
+                    boxShadow="2xl"
+                    onClick={(e) => e.stopPropagation()} // Prevent modal close on image click
+                  />
+                )}
+              </DialogContent>
+            </DialogPositioner>
+          </Dialog.Root>
         </Box>
       </section>
     </>

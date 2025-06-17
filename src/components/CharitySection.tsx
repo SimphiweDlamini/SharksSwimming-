@@ -43,7 +43,7 @@ const CharitySection = () => {
               <strong>charity</strong> and <strong>community events</strong>{" "}
               aimed at helping out those less fortunate in our society. These
               include kids coming to the pool for <strong>lessons</strong> as
-              well as <strong>charity swims</strong>
+              well as <strong>charity swims </strong>
               raising funds for OVC's, orphanages, SAWS etc. Giving back to and
               supporting other's is a strong ethos of{" "}
               <strong>Sharks Swimming Club.</strong>

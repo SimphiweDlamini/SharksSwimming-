@@ -69,7 +69,12 @@ const ProgramsSection = () => {
               <strong>swimming lessons for children</strong>, adult classes, or
               elite coaching, Sharks Swimming Club has a program for you.
             </Text>
-            <SimpleGrid columnGap={3} rowGap={2} columns={{ base: 1, md: 3 }}>
+            <SimpleGrid
+              paddingBottom={10}
+              columnGap={3}
+              rowGap={2}
+              columns={{ base: 1, md: 3 }}
+            >
               {programs.map(({ title, description }) => (
                 <VStack
                   key={title}
@@ -92,7 +97,25 @@ const ProgramsSection = () => {
                 </VStack>
               ))}
             </SimpleGrid>
-            <Text paddingTop={5} fontSize="lg">
+            <Text
+              paddingTop={5}
+              fontSize="lg"
+              bg={theme === "dark" ? "teal.900" : "teal.100"}
+              color={theme === "dark" ? "teal.200" : "teal.800"}
+              p={4}
+              borderRadius="md"
+              fontWeight="medium"
+              boxShadow="sm"
+              lineHeight="1.6"
+              display="flex"
+              alignItems="center"
+              gap={3}
+              borderLeft="4px solid"
+              borderColor={theme === "dark" ? "teal.300" : "teal.500"}
+            >
+              <Box as="span" fontSize="2xl" aria-hidden="true">
+                🏊‍♂️
+              </Box>
               Lesson's are on offer Monday - Saturdays, and classes cater for
               all age groups and skill levels. Days and time's can be arranged
               to fit all, making it easy for everyone to join and improve their

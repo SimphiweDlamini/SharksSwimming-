@@ -19,11 +19,20 @@ const sections = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
   { id: "programs", label: "Programs" },
-  // { id: "schedule", label: "Schedule" },
   { id: "coach", label: "Coach" },
-  { id: "gallery", label: "Gallery" },
+  {
+    id: "gallery",
+    label: "Gallery",
+    subsections: [
+      { id: "openwater", label: "Open Water" },
+      { id: "master", label: "Masters / Adults" },
+      { id: "facility", label: "Facility" },
+      { id: "kit", label: "Kit and Uniform" },
+    ],
+  },
+  { id: "teacher", label: "Teacher's course" },
+  { id: "charity", label: "Charity" },
   { id: "contact", label: "Contact" },
-  // { id: "openwater", label: "Open Water" },
 ];
 
 function App() {
@@ -42,9 +51,9 @@ function App() {
         <OpenWaterSection />
         <MasterSection />
         <FacilitySection />
-        <CharitySection />
-        <TeachersSection />
         <KitSection />
+        <TeachersSection />
+        <CharitySection />
         <ContactSection />
       </main>
 

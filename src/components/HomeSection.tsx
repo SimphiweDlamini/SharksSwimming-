@@ -100,6 +100,7 @@ const HomeSection = () => {
           >
             <Heading
               fontSize={{ base: "3xl", md: "5xl" }}
+              lineHeight={1}
               fontFamily="Raleway, sans-serif"
               as="h1"
             >

@@ -14,6 +14,7 @@ const images = [
   "/openwater2.jpg",
   "/swim6.jpg",
   "/swim7.jpg",
+  "/charity1.jpg",
   "/swim8.jpg",
   "/swim9.jpg",
   "/openwater3.jpg",
@@ -24,7 +25,6 @@ const images = [
   "/openwater4.jpg",
   "/swim14.jpg",
   "/swim15.jpg",
-  "/swim16.jpg",
   "/master1.jpg",
 ];
 

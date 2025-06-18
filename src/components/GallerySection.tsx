@@ -32,7 +32,6 @@ const images: string[] = [
   "/swim13.jpg",
   "/swim14.jpg",
   "/swim15.jpg",
-  "/swim16.jpg",
 ];
 
 interface ImageGridProps {

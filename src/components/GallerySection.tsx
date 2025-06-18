@@ -1,7 +1,7 @@
+import React, { useState, useEffect, useCallback } from "react";
 import {
   Box,
   Heading,
-  SimpleGrid,
   Image,
   Container,
   Text,
@@ -10,15 +10,13 @@ import {
   DialogBackdrop,
   DialogPositioner,
   DialogContent,
+  SimpleGrid,
 } from "@chakra-ui/react";
-import "@fontsource/raleway/400.css";
-import "@fontsource/roboto-slab/400.css";
-import { useTheme as useNextTheme } from "next-themes";
-import { Helmet } from "react-helmet-async";
-import { useState } from "react";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
+import { useTheme as useNextTheme } from "next-themes";
 
-const images = [
+const images: string[] = [
   "/swim1.jpg",
   "/swim2.jpg",
   "/swim3.jpg",
@@ -35,34 +33,87 @@ const images = [
   "/swim14.jpg",
   "/swim15.jpg",
   "/swim16.jpg",
-  "/swim17.jpg",
 ];
 
-const visibleImages = images.slice(0, 6); // Show first 3 images in grid
+interface ImageGridProps {
+  images: string[];
+  onImageClick: (idx: number) => void;
+}
 
-const GallerySection = () => {
+const ImageGrid: React.FC<ImageGridProps> = ({ images, onImageClick }) => {
+  const [startIdx, setStartIdx] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setStartIdx((prev) => (prev + 6) % images.length);
+        setFade(true);
+      }, 300);
+    }, 10000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  // Compute visible images with wrap-around
+  let visibleImages = images.slice(startIdx, startIdx + 6);
+  if (visibleImages.length < 6) {
+    visibleImages = visibleImages.concat(
+      images.slice(0, 6 - visibleImages.length)
+    );
+  }
+
+  return (
+    <Box
+      style={{
+        opacity: fade ? 1 : 0,
+        transition: "opacity 300ms ease-in-out",
+      }}
+    >
+      <SimpleGrid columnGap={3} rowGap={2} columns={{ base: 1, sm: 2, md: 3 }}>
+        {visibleImages.map((src, idx) => (
+          <Image
+            key={idx}
+            src={src}
+            alt={`Gallery image ${((startIdx + idx) % images.length) + 1}`}
+            borderRadius="md"
+            objectFit="cover"
+            boxShadow="md"
+            maxH="200px"
+            w="100%"
+            cursor="pointer"
+            onClick={() => onImageClick((startIdx + idx) % images.length)}
+            transition="transform 1s"
+            _hover={{ transform: "scale(1.03)" }}
+          />
+        ))}
+      </SimpleGrid>
+    </Box>
+  );
+};
+
+const GallerySection: React.FC = () => {
   const { theme } = useNextTheme();
-
   const bg = theme === "dark" ? "#1A202C" : "white";
   const color = theme === "dark" ? "#E2E8F0" : "#1A202C";
 
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
   const [open, setOpen] = useState(false);
 
-  const openImage = (idx: number) => {
+  const openImage = useCallback((idx: number) => {
     setSelectedIdx(idx);
     setOpen(true);
-  };
+  }, []);
 
-  const showPrev = (e: React.MouseEvent) => {
+  const showPrev = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setSelectedIdx((prev) => {
-      if (prev === null) return 0;
+      if (prev === null) return images.length - 1;
       return prev === 0 ? images.length - 1 : prev - 1;
     });
   };
 
-  const showNext = (e: React.MouseEvent) => {
+  const showNext = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setSelectedIdx((prev) => {
       if (prev === null) return 0;
@@ -75,7 +126,6 @@ const GallerySection = () => {
     setSelectedIdx(null);
   };
 
-  // Correct onOpenChange handler signature for Chakra UI v3 Dialog
   const handleOpenChange = (details: { open: boolean }) => {
     setOpen(details.open);
     if (!details.open) {
@@ -111,28 +161,8 @@ const GallerySection = () => {
               See our swimmers in action and get inspired to join Sharks
               Swimming Club!
             </Text>
-            <SimpleGrid
-              columnGap={3}
-              rowGap={2}
-              columns={{ base: 1, sm: 2, md: 3 }}
-            >
-              {visibleImages.map((src, idx) => (
-                <Image
-                  key={idx}
-                  src={src}
-                  alt={`Gallery image ${idx + 1}`}
-                  borderRadius="md"
-                  objectFit="cover"
-                  boxShadow="md"
-                  maxH="200px"
-                  w="100%"
-                  cursor="pointer"
-                  onClick={() => openImage(idx)}
-                  transition="transform 0.2s"
-                  _hover={{ transform: "scale(1.03)" }}
-                />
-              ))}
-            </SimpleGrid>
+
+            <ImageGrid images={images} onImageClick={openImage} />
           </Container>
         </Box>
 
@@ -150,7 +180,6 @@ const GallerySection = () => {
               p={{ base: 2, md: 0 }}
               onClick={handleClose}
             >
-              {/* Close Button */}
               <IconButton
                 aria-label="Close"
                 position="absolute"
@@ -164,7 +193,6 @@ const GallerySection = () => {
                 <FaTimes />
               </IconButton>
 
-              {/* Previous Button */}
               <IconButton
                 aria-label="Previous"
                 position="absolute"
@@ -179,7 +207,6 @@ const GallerySection = () => {
                 <FaChevronLeft />
               </IconButton>
 
-              {/* Next Button */}
               <IconButton
                 aria-label="Next"
                 position="absolute"
@@ -194,7 +221,6 @@ const GallerySection = () => {
                 <FaChevronRight />
               </IconButton>
 
-              {/* Displayed Image */}
               {selectedIdx !== null && (
                 <Image
                   src={images[selectedIdx]}
@@ -203,7 +229,7 @@ const GallerySection = () => {
                   maxW="90vw"
                   borderRadius="lg"
                   boxShadow="2xl"
-                  onClick={(e) => e.stopPropagation()} // Prevent modal close on image click
+                  onClick={(e) => e.stopPropagation()}
                 />
               )}
             </DialogContent>

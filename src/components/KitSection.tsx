@@ -1,3 +1,4 @@
+import React, { useState, useCallback } from "react";
 import {
   Box,
   Heading,
@@ -15,37 +16,63 @@ import {
 import "@fontsource/raleway/400.css";
 import "@fontsource/roboto-slab/400.css";
 import { useTheme as useNextTheme } from "next-themes";
-import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const images = ["/tshirts.jpg"];
+const images: string[] = ["/tshirts.jpg"];
 
-const visibleImages = images.slice(0, 1);
+interface ImageGridProps {
+  images: string[];
+  onImageClick: (idx: number) => void;
+}
 
-const KitSection = () => {
+const ImageGrid: React.FC<ImageGridProps> = ({ images, onImageClick }) => {
+  // Since only one image, no cycling or fade needed here
+  return (
+    <SimpleGrid columns={1}>
+      {images.map((src, idx) => (
+        <Image
+          key={idx}
+          src={src}
+          alt={`Kit ${idx + 1}`}
+          borderRadius="md"
+          objectFit="cover"
+          boxShadow="md"
+          maxH="600px"
+          w="100%"
+          cursor="pointer"
+          onClick={() => onImageClick(idx)}
+          transition="transform 1s"
+          _hover={{ transform: "scale(1.03)" }}
+        />
+      ))}
+    </SimpleGrid>
+  );
+};
+
+const KitSection: React.FC = () => {
   const { theme } = useNextTheme();
 
   const bg = theme === "dark" ? "#1A202C" : "white";
   const color = theme === "dark" ? "#E2E8F0" : "#1A202C";
 
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
-  const openImage = (idx: number) => {
+  const openImage = useCallback((idx: number) => {
     setSelectedIdx(idx);
     setOpen(true);
-  };
+  }, []);
 
-  const showPrev = (e: React.MouseEvent) => {
+  const showPrev = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setSelectedIdx((prev) => {
-      if (prev === null) return 0;
+      if (prev === null) return images.length - 1;
       return prev === 0 ? images.length - 1 : prev - 1;
     });
   };
 
-  const showNext = (e: React.MouseEvent) => {
+  const showNext = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setSelectedIdx((prev) => {
       if (prev === null) return 0;
@@ -58,7 +85,6 @@ const KitSection = () => {
     setSelectedIdx(null);
   };
 
-  // Correct onOpenChange handler signature for Chakra UI v3 Dialog
   const handleOpenChange = (details: { open: boolean }) => {
     setOpen(details.open);
     if (!details.open) {
@@ -76,15 +102,7 @@ const KitSection = () => {
           />
         </Helmet>
 
-        <Box
-          id="kit"
-          py={20}
-          px={6}
-          //maxW="600px"
-          mx="auto"
-          bg={bg}
-          color={color}
-        >
+        <Box id="kit" py={20} px={6} mx="auto" bg={bg} color={color}>
           <Container maxW="600px" px={6}>
             <Heading
               as="h2"
@@ -95,24 +113,7 @@ const KitSection = () => {
               Kit and Uniform
             </Heading>
             <Stack direction={{ base: "column", sm: "row" }} px={4}>
-              <SimpleGrid columns={1}>
-                {visibleImages.map((src, idx) => (
-                  <Image
-                    key={idx}
-                    src={src}
-                    alt={`Kit ${idx + 1}`}
-                    borderRadius="md"
-                    objectFit="cover"
-                    boxShadow="md"
-                    maxH="600px"
-                    w="100%"
-                    cursor="pointer"
-                    onClick={() => openImage(idx)}
-                    transition="transform 0.2s"
-                    _hover={{ transform: "scale(1.03)" }}
-                  />
-                ))}
-              </SimpleGrid>
+              <ImageGrid images={images} onImageClick={openImage} />
               <Text paddingBottom={5} fontSize="lg" textAlign="right">
                 Swim Caps, T-shirt's, Shorts, Long pants and Long Sleeve
                 T-shirt's, Towels for Sharks Swim Club
@@ -187,7 +188,7 @@ const KitSection = () => {
                     maxW="90vw"
                     borderRadius="lg"
                     boxShadow="2xl"
-                    onClick={(e) => e.stopPropagation()} // Prevent modal close on image click
+                    onClick={(e) => e.stopPropagation()}
                   />
                 )}
               </DialogContent>

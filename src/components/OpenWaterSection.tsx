@@ -1,3 +1,4 @@
+import React, { useState, useEffect, useCallback } from "react";
 import {
   Box,
   Heading,
@@ -7,50 +8,105 @@ import {
   SimpleGrid,
   Dialog,
   DialogBackdrop,
-  DialogContent,
   DialogPositioner,
+  DialogContent,
   IconButton,
   Stack,
 } from "@chakra-ui/react";
 import "@fontsource/raleway/400.css";
 import "@fontsource/roboto-slab/400.css";
 import { useTheme as useNextTheme } from "next-themes";
-import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const images = [
+const images: string[] = [
   "/openwater1.jpg",
   "/openwater2.jpg",
   "/openwater3.jpg",
   "/openwater4.jpg",
 ];
 
-const visibleImages = images.slice(0, 3);
+// Child component managing image cycling and fade
+interface ImageGridProps {
+  images: string[];
+  onImageClick: (idx: number) => void;
+}
 
-const OpenWaterSection = () => {
+const ImageGrid: React.FC<ImageGridProps> = ({ images, onImageClick }) => {
+  const [startIdx, setStartIdx] = useState<number>(0);
+  const [fade, setFade] = useState<boolean>(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setStartIdx((prev) => (prev + 3) % images.length);
+        setFade(true);
+      }, 300);
+    }, 10000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  // Always show 3 images with wrap-around
+  let visibleImages = images.slice(startIdx, startIdx + 3);
+  if (visibleImages.length < 3) {
+    visibleImages = visibleImages.concat(
+      images.slice(0, 3 - visibleImages.length)
+    );
+  }
+
+  return (
+    <Box
+      style={{
+        opacity: fade ? 1 : 0,
+        transition: "opacity 300ms ease-in-out",
+      }}
+    >
+      <SimpleGrid columnGap={3} rowGap={2} columns={{ base: 1, sm: 2, md: 3 }}>
+        {visibleImages.map((src, idx) => (
+          <Image
+            key={idx}
+            src={src}
+            alt={`Open Water ${((startIdx + idx) % images.length) + 1}`}
+            borderRadius="md"
+            objectFit="cover"
+            boxShadow="md"
+            maxH="200px"
+            w="100%"
+            cursor="pointer"
+            onClick={() => onImageClick((startIdx + idx) % images.length)}
+            transition="transform 1s"
+            _hover={{ transform: "scale(1.03)" }}
+          />
+        ))}
+      </SimpleGrid>
+    </Box>
+  );
+};
+
+const OpenWaterSection: React.FC = () => {
   const { theme } = useNextTheme();
 
   const bg = theme === "dark" ? "#2D3748" : "#EDF2F7";
   const color = theme === "dark" ? "#CBD5E0" : "#2D3748";
 
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
-  const openImage = (idx: number) => {
+  const openImage = useCallback((idx: number) => {
     setSelectedIdx(idx);
     setOpen(true);
-  };
+  }, []);
 
-  const showPrev = (e: React.MouseEvent) => {
+  const showPrev = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setSelectedIdx((prev) => {
-      if (prev === null) return 0;
+      if (prev === null) return images.length - 1;
       return prev === 0 ? images.length - 1 : prev - 1;
     });
   };
 
-  const showNext = (e: React.MouseEvent) => {
+  const showNext = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setSelectedIdx((prev) => {
       if (prev === null) return 0;
@@ -63,7 +119,6 @@ const OpenWaterSection = () => {
     setSelectedIdx(null);
   };
 
-  // Correct onOpenChange handler signature for Chakra UI v3 Dialog
   const handleOpenChange = (details: { open: boolean }) => {
     setOpen(details.open);
     if (!details.open) {
@@ -81,15 +136,7 @@ const OpenWaterSection = () => {
           />
         </Helmet>
 
-        <Box
-          id="openwater"
-          py={20}
-          px={6}
-          //maxW="600px"
-          mx="auto"
-          bg={bg}
-          color={color}
-        >
+        <Box id="openwater" py={20} px={6} mx="auto" bg={bg} color={color}>
           <Container maxW="100%" px={6}>
             <Heading
               as="h2"
@@ -109,28 +156,8 @@ const OpenWaterSection = () => {
                 dam located 15 minutes from Mbabane is the ideal place for open
                 water swimming.
               </Text>
-              <SimpleGrid
-                columnGap={3}
-                rowGap={2}
-                columns={{ base: 1, sm: 2, md: 3 }}
-              >
-                {visibleImages.map((src, idx) => (
-                  <Image
-                    key={idx}
-                    src={src}
-                    alt={`Open Water ${idx + 1}`}
-                    borderRadius="md"
-                    objectFit="cover"
-                    boxShadow="md"
-                    maxH="200px"
-                    w="100%"
-                    cursor="pointer"
-                    onClick={() => openImage(idx)}
-                    transition="transform 0.2s"
-                    _hover={{ transform: "scale(1.03)" }}
-                  />
-                ))}
-              </SimpleGrid>
+
+              <ImageGrid images={images} onImageClick={openImage} />
             </Stack>
           </Container>
         </Box>
@@ -202,7 +229,7 @@ const OpenWaterSection = () => {
                   maxW="90vw"
                   borderRadius="lg"
                   boxShadow="2xl"
-                  onClick={(e) => e.stopPropagation()} // Prevent modal close on image click
+                  onClick={(e) => e.stopPropagation()}
                 />
               )}
             </DialogContent>

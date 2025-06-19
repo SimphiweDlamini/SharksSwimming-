@@ -107,6 +107,7 @@ const KitSection: React.FC = () => {
             <Heading
               as="h2"
               fontFamily="Raleway, sans-serif"
+              fontSize="3xl"
               mb={6}
               textAlign="center"
             >
@@ -114,7 +115,12 @@ const KitSection: React.FC = () => {
             </Heading>
             <Stack direction={{ base: "column", sm: "row" }} px={4}>
               <ImageGrid images={images} onImageClick={openImage} />
-              <Text paddingBottom={5} fontSize="lg" textAlign="right">
+              <Text
+                paddingBottom={5}
+                fontSize="lg"
+                fontWeight="bold"
+                textAlign="right"
+              >
                 Swim Caps, T-shirt's, Shorts, Long pants and Long Sleeve
                 T-shirt's, Towels for Sharks Swim Club
               </Text>

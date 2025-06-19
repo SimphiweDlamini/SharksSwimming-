@@ -36,6 +36,7 @@ const CharitySection: React.FC = () => {
             <Heading
               as="h2"
               fontFamily="Raleway, sans-serif"
+              fontSize="3xl"
               mb={6}
               textAlign="center"
             >

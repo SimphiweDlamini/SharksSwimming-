@@ -49,6 +49,7 @@ const ContactSection = () => {
           <Heading
             as="h2"
             fontFamily="Raleway, sans-serif"
+            fontSize="3xl"
             mb={6}
             color="gray.800"
             _dark={{ color: "gray.100" }}

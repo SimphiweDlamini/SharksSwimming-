@@ -147,6 +147,7 @@ const GallerySection: React.FC = () => {
             <Heading
               as="h2"
               fontFamily="Raleway, sans-serif"
+              fontSize="3xl"
               mb={8}
               textAlign="center"
               color={color}
@@ -168,7 +169,7 @@ const GallerySection: React.FC = () => {
               fontSize="sm"
               textAlign="center"
             >
-              You may click on the image to get a better view
+              You may click on an image to get a better view
             </Text>
           </Container>
         </Box>

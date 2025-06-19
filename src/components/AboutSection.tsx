@@ -24,15 +24,28 @@ const AboutSection = () => {
           id="about"
           py={20}
           px={6}
-          //maxW="800px"
           mx="auto"
           bg={bg}
           color={color}
           width="100%"
         >
           <Container maxW="800px" px={6}>
-            <Heading as="h2" fontFamily="Raleway, sans-serif" mb={4}>
+            <Heading
+              as="h2"
+              fontSize="3xl"
+              justifySelf="center"
+              fontFamily="Raleway, sans-serif"
+              mb={4}
+            >
               About Sharks Swimming Club Eswatini
+            </Heading>
+            <Heading
+              as="h3"
+              justifySelf="center"
+              fontFamily="Raleway, sans-serif"
+              mb={4}
+            >
+              Profile
             </Heading>
             <Text
               fontFamily="Roboto Slab, serif"
@@ -41,7 +54,7 @@ const AboutSection = () => {
             >
               Founded in the early 1990's,{" "}
               <strong>Sharks swimming club </strong> is dedicated to nurturing
-              both children and adults in the art of swimming.Our mission is{" "}
+              both children and adults in the art of swimming. Our mission is to{" "}
               <strong>promote water safety and swimming</strong> as a life skill
               and competitive sport, offering coaching, safe heated facilities,
               and a welcoming environment for everyone interested in swimming

@@ -162,6 +162,14 @@ const GallerySection: React.FC = () => {
             </Text>
 
             <ImageGrid images={images} onImageClick={openImage} />
+            <Text
+              fontWeight="bolder"
+              paddingTop={4}
+              fontSize="sm"
+              textAlign="center"
+            >
+              You may click on the image to get a better view
+            </Text>
           </Container>
         </Box>
 

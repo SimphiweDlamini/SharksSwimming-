@@ -55,7 +55,7 @@ const ProgramsSection = () => {
         >
           <Container maxW="900px" px={6}>
             <Heading
-              as="h2"
+              as="h3"
               fontFamily="Raleway, sans-serif"
               mb={8}
               textAlign="center"

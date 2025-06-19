@@ -18,14 +18,12 @@ import KitSection from "./components/KitSection";
 const sections = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
-  { id: "programs", label: "Programs" },
-  { id: "coach", label: "Coach" },
   { id: "gallery", label: "Gallery" },
   { id: "openwater", label: "Open Water" },
-  { id: "master", label: "Masters/Adults" },
+  { id: "master", label: "Masters" },
   { id: "facility", label: "Facility" },
   { id: "kit", label: "Kit" },
-  { id: "teacher", label: "Teacher's course" },
+  { id: "teacher", label: "Teaching" },
   { id: "charity", label: "Charity" },
   { id: "contact", label: "Contact" },
 ];

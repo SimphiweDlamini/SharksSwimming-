@@ -4,28 +4,4 @@
     <loc>https://sharks-swimming-club.vercel.app/</loc>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://sharks-swimming-club.vercel.app/#about</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sharks-swimming-club.vercel.app/#programs</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sharks-swimming-club.vercel.app/#schedule</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sharks-swimming-club.vercel.app/#coach</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sharks-swimming-club.vercel.app/#gallery</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://sharks-swimming-club.vercel.app/#contact</loc>
-    <priority>0.6</priority>
-  </url>
 </urlset>

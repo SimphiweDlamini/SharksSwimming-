@@ -89,13 +89,13 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
             // minWidth="content" might also be used here
           >
             <Image
-              src="/Sharks_logo_up.png"
+              src="/Sharks_logo_up.jpg"
               alt="Sharks Swimming Club Logo"
               borderRadius="md"
               objectFit="fill"
               boxShadow="md"
-              maxH="40px"
-              w="40px"
+              maxH="80px"
+              w="80px"
             />
             <Box
               flexShrink={1} // Allow the text container to shrink

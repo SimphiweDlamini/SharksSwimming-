@@ -61,7 +61,7 @@ const HomeSection = () => {
           <meta property="og:image" content="/Sharks_logo_up.png" />
           <meta
             property="og:url"
-            content="https://sharks-swimming-club.vercel.app"
+            content="https://www.sharks-swim-club-eswatini.com/"
           />
           <meta name="twitter:card" content="summary_large_image" />
         </Helmet>

@@ -14,6 +14,7 @@ import FacilitySection from "./components/FacilitySection";
 import CharitySection from "./components/CharitySection";
 import TeachersSection from "./components/TeachersSection";
 import KitSection from "./components/KitSection";
+import JsonLd from "./JsonLd";
 
 const sections = [
   { id: "home", label: "Home" },
@@ -28,9 +29,32 @@ const sections = [
   { id: "contact", label: "Contact" },
 ];
 
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.sharks-swim-club-eswatini.com",
+    },
+  ],
+};
+
+const organizationData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Sharks Swim Club Eswatini",
+  url: "https://www.sharks-swim-club-eswatini.com",
+};
+
 function App() {
   return (
     <>
+      <JsonLd data={breadcrumbData} />
+      <JsonLd data={organizationData} />
+
       <header>
         <Navbar sections={sections}></Navbar>
       </header>

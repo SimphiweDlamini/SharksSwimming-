@@ -41,11 +41,12 @@ const FacilitySection = () => {
             </Heading>
             <Text paddingBottom={5} fontSize="lg">
               Our heated 3 lane, 20m pool is situated in{" "}
-              <strong>Ezulwini</strong> making it easily accessible to Mbabane,
-              Manzini, Malkern's and the valley itself. We aim to offer a
-              minimum 28°C water temperature year-round. Our facility is the
-              only <strong>fully heated out-door pool</strong> in the Country.
-              World Aquatic pool regulations ensure the more{" "}
+              <strong>Ezulwini</strong> making it easily accessible to{" "}
+              <strong>Mbabane, Manzini, Malkern's</strong> and the valley
+              itself. We aim to offer a minimum 28°C water temperature
+              year-round. Our facility is the only{" "}
+              <strong>fully heated out-door pool</strong> in the Country. World
+              Aquatic pool regulations ensure the more{" "}
               <strong>competitive swimmer</strong> has access to correct{" "}
               <strong>starting blocks</strong>,{" "}
               <strong>backstroke flags</strong>, and{" "}

@@ -97,7 +97,7 @@ const MasterSection: React.FC = () => {
         <Helmet>
           <meta
             name="description"
-            content="Check the Sharks Swimming Club Eswatini Masters and Adults Swimming."
+            content="Discover Sharks Swimming Club Eswatini's adult and masters swimming programs, including learn-to-swim, training groups, aqua therapy, and competitive masters swimmers."
           />
         </Helmet>
 
@@ -105,6 +105,7 @@ const MasterSection: React.FC = () => {
           <Container px={6}>
             <Heading
               as="h2"
+              id="master-heading"
               fontFamily="Raleway, sans-serif"
               fontSize="3xl"
               mb={6}
@@ -126,7 +127,7 @@ const MasterSection: React.FC = () => {
                 maxW="500px"
                 flex="1"
               >
-                <strong>Sharks Swimming club</strong> offer's both an adult '
+                <strong>Sharks Swimming club</strong> offers both an adult '
                 <strong>learn to swim</strong>' program and an adult training
                 group. Adults may also access the club's facilities Mon - Fri
                 for their own 'lap swimming' at a monthly fee. Adults recovering

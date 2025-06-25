@@ -27,7 +27,7 @@ const CharitySection: React.FC = () => {
         <Helmet>
           <meta
             name="description"
-            content="Check the Sharks Swimming Club Eswatini Community and Charity Events."
+            content="Discover Sharks Swimming Club Eswatini's community and charity events, including swimming lessons and charity swims supporting orphans and vulnerable children."
           />
         </Helmet>
 
@@ -35,6 +35,7 @@ const CharitySection: React.FC = () => {
           <Container maxW="850px" px={6}>
             <Heading
               as="h2"
+              id="charity-heading"
               fontFamily="Raleway, sans-serif"
               fontSize="3xl"
               mb={6}
@@ -76,11 +77,11 @@ const CharitySection: React.FC = () => {
               >
                 <strong>Sharks Swim Club</strong> has initiated both{" "}
                 <strong>charity</strong> and <strong>community events</strong>{" "}
-                aimed at helping out those less fortunate in our society. These
+                aimed at helping those less fortunate in our society. These
                 include kids coming to the pool for <strong>lessons</strong> as
                 well as <strong>charity swims </strong>
-                raising funds for OVC's, orphanages, SAWS etc. Giving back to
-                and supporting other's is a strong ethos of{" "}
+                raising funds for OVCs, orphanages, SAWS etc. Giving back and
+                supporting other's is a strong ethos of{" "}
                 <strong>Sharks Swimming Club.</strong>
               </Text>
             </Stack>

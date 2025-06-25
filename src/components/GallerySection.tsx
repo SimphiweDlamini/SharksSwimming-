@@ -138,7 +138,7 @@ const GallerySection: React.FC = () => {
         <Helmet>
           <meta
             name="description"
-            content="View photos of our swimmers, events, and training sessions at Sharks Swimming Club Eswatini."
+            content="View photos of swimming lessons, competitions, and community events at Sharks Swimming Club Eswatini. See our swimmers in action and get inspired to join."
           />
         </Helmet>
 
@@ -146,6 +146,7 @@ const GallerySection: React.FC = () => {
           <Container maxW="1000px" px={6}>
             <Heading
               as="h2"
+              id="gallery-heading"
               fontFamily="Raleway, sans-serif"
               fontSize="3xl"
               mb={8}

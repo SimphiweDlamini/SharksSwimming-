@@ -1,3 +1,2 @@
 User-agent: *
-Allow: /
-Sitemap: https://www.sharks-swim-club-eswatini.com//sitemap.xml
+Sitemap: https://www.sharks-swim-club-eswatini.com/sitemap.xml

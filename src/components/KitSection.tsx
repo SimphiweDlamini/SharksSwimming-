@@ -98,7 +98,7 @@ const KitSection: React.FC = () => {
         <Helmet>
           <meta
             name="description"
-            content="Check the Sharks Swimming Club Eswatini Kit and Uniform."
+            content="Explore the Sharks Swimming Club Eswatini kit and uniform, including swim caps, T-shirts, shorts, long pants, and towels."
           />
         </Helmet>
 
@@ -106,6 +106,7 @@ const KitSection: React.FC = () => {
           <Container maxW="600px" px={6}>
             <Heading
               as="h2"
+              id="kit-heading"
               fontFamily="Raleway, sans-serif"
               fontSize="3xl"
               mb={6}
@@ -121,7 +122,7 @@ const KitSection: React.FC = () => {
                 fontWeight="bold"
                 textAlign="right"
               >
-                Swim Caps, T-shirt's, Shorts, Long pants and Long Sleeve
+                Swim Caps, T-shirts, Shorts, Long pants and Long Sleeve
                 T-shirt's, Towels for Sharks Swim Club
               </Text>
             </Stack>

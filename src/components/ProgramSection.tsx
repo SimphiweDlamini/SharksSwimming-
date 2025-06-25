@@ -40,7 +40,7 @@ const ProgramsSection = () => {
         <Helmet>
           <meta
             name="description"
-            content="Explore our swimming programs for all ages and skill levels in Eswatini"
+            content="Explore Sharks Swimming Club Eswatini's swimming programs for all ages and skill levels, including beginner lessons, advanced training, and competitive squads."
           />
         </Helmet>
 
@@ -56,6 +56,7 @@ const ProgramsSection = () => {
           <Container maxW="900px" px={6}>
             <Heading
               as="h3"
+              id="programs-heading"
               fontFamily="Raleway, sans-serif"
               mb={8}
               textAlign="center"
@@ -116,9 +117,9 @@ const ProgramsSection = () => {
               <Box as="span" fontSize="2xl" aria-hidden="true">
                 🏊‍♂️
               </Box>
-              Lesson's are on offer Monday - Saturdays, and classes cater for
-              all age groups and skill levels. Days and time's can be arranged
-              to fit all, making it easy for everyone to join and improve their
+              Lessons are on offer Monday - Saturdays, and classes cater for all
+              age groups and skill levels. Days and time's can be arranged to
+              fit all, making it easy for everyone to join and improve their
               swimming ability
             </Text>
           </Container>

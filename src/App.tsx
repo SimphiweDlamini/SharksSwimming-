@@ -14,7 +14,7 @@ import FacilitySection from "./components/FacilitySection";
 import CharitySection from "./components/CharitySection";
 import TeachersSection from "./components/TeachersSection";
 import KitSection from "./components/KitSection";
-import JsonLd from "./JsonLd";
+import { Helmet } from "react-helmet-async";
 
 const sections = [
   { id: "home", label: "Home" },
@@ -47,13 +47,25 @@ const organizationData = {
   "@type": "Organization",
   name: "Sharks Swim Club Eswatini",
   url: "https://www.sharks-swim-club-eswatini.com",
+  logo: "https://www.sharks-swim-club-eswatini.com/Sharks_logo_small.png",
+  sameAs: [
+    "https://www.facebook.com/sharksswimmingclub",
+    "https://twitter.com/sharksswimclub",
+    "https://www.instagram.com/sharksswimmingclub",
+  ],
 };
 
 function App() {
   return (
     <>
-      <JsonLd data={breadcrumbData} />
-      <JsonLd data={organizationData} />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbData)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(organizationData)}
+        </script>
+      </Helmet>
 
       <header>
         <Navbar sections={sections}></Navbar>

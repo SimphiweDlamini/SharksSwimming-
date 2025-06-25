@@ -31,6 +31,7 @@ const AboutSection = () => {
         >
           <Container maxW="800px" px={6}>
             <Heading
+              id="about-heading"
               as="h2"
               fontSize="3xl"
               justifySelf="center"

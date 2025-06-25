@@ -6,7 +6,6 @@ import {
   Link,
   HStack,
   Icon,
-  Container,
   Spacer,
 } from "@chakra-ui/react";
 import "@fontsource/raleway/400.css";
@@ -27,7 +26,7 @@ const ContactSection = () => {
         <Helmet>
           <meta
             name="description"
-            content="Contact Sharks Swimming Club Eswatini for membership, training, or event inquiries."
+            content="Contact Sharks Swimming Club Eswatini for swimming lessons, membership, training, and event inquiries. Get in touch to start your swimming journey today."
           />
         </Helmet>
 
@@ -45,9 +44,9 @@ const ContactSection = () => {
           boxShadow="md"
           textAlign="center"
         >
-          <Container maxW="600px" px={6}></Container>
           <Heading
             as="h2"
+            id="contact-heading"
             fontFamily="Raleway, sans-serif"
             fontSize="3xl"
             mb={6}

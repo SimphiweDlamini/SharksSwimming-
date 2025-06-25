@@ -16,7 +16,7 @@ const FacilitySection = () => {
         <Helmet>
           <meta
             name="description"
-            content="Check the Sharks Swimming Club Eswatini training facility."
+            content="Discover the Sharks Swimming Club Eswatini training facility, featuring a heated 3-lane, 20m outdoor pool in Ezulwini, fully equipped for competitive swimming."
           />
         </Helmet>
 
@@ -32,6 +32,7 @@ const FacilitySection = () => {
           <Container maxW="600px" px={6}>
             <Heading
               as="h2"
+              id="facility-heading"
               fontFamily="Raleway, sans-serif"
               fontSize="3xl"
               mb={6}
@@ -50,7 +51,7 @@ const FacilitySection = () => {
               <strong>competitive swimmer</strong> has access to correct{" "}
               <strong>starting blocks</strong>,{" "}
               <strong>backstroke flags</strong>, and{" "}
-              <strong>pool marking's</strong>, preparing them thoroughly for
+              <strong>pool markings</strong>, preparing them thoroughly for
               possible <strong>competition</strong> both locally and over the
               border.
             </Text>

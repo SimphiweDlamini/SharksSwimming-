@@ -31,7 +31,7 @@ const CoachesSection = () => {
         <Helmet>
           <meta
             name="description"
-            content="Meet the experienced coach for Sharks Swimming Club Eswatini."
+            content="Meet Chris Stapley, the experienced coach of Sharks Swimming Club Eswatini with over 30 years of coaching and teaching experience."
           />
         </Helmet>
 
@@ -39,6 +39,7 @@ const CoachesSection = () => {
           <Container maxW="900px" px={6}>
             <Heading
               as="h3"
+              id="coaches-heading"
               fontFamily="Raleway, sans-serif"
               mb={8}
               textAlign="center"

@@ -132,7 +132,7 @@ const OpenWaterSection: React.FC = () => {
         <Helmet>
           <meta
             name="description"
-            content="Check the Sharks Swimming Club Eswatini Open Water Activities and Events."
+            content="Discover Sharks Swimming Club Eswatini's open water swimming activities, training, and events led by experienced coach Chris Stapley."
           />
         </Helmet>
 
@@ -140,6 +140,7 @@ const OpenWaterSection: React.FC = () => {
           <Container maxW="100%" px={6}>
             <Heading
               as="h2"
+              id="openwater-heading"
               fontFamily="Raleway, sans-serif"
               fontSize="3xl"
               mb={6}

@@ -10,7 +10,12 @@ import {
 } from "@chakra-ui/react";
 import "@fontsource/raleway/400.css";
 import "@fontsource/roboto-slab/400.css";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { useTheme as useNextTheme } from "next-themes";
 import { Helmet } from "react-helmet-async";
 
@@ -69,6 +74,19 @@ const ContactSection = () => {
               <Icon as={FaPhone} color="teal.500" boxSize={5} />
               <Spacer />
               <Text fontSize="lg">+268 7647 0463</Text>
+            </HStack>
+            <HStack>
+              <Icon as={FaWhatsapp} color="teal.500" boxSize={5} />
+              <Spacer />
+              <Link
+                href="https://wa.me/26876470463"
+                fontSize="lg"
+                color="teal.600"
+                _dark={{ color: "teal.300" }}
+                _hover={{ textDecoration: "underline" }}
+              >
+                Message on Whatsapp
+              </Link>
             </HStack>
             <HStack>
               <Icon as={FaEnvelope} color="teal.500" boxSize={5} />

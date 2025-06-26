@@ -89,7 +89,7 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
             // minWidth="content" might also be used here
           >
             <Image
-              src="/Sharks_logo_up.jpg"
+              src="/Sharks_logo.png"
               alt="Sharks Swimming Club Logo"
               borderRadius="md"
               objectFit="fill"

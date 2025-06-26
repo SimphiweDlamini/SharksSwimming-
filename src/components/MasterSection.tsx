@@ -127,7 +127,7 @@ const MasterSection: React.FC = () => {
                 maxW="500px"
                 flex="1"
               >
-                <strong>Sharks Swimming club</strong> offers both an adult '
+                <strong>Sharks Swimming Club</strong> offers both an adult '
                 <strong>learn to swim</strong>' program and an adult training
                 group. Adults may also access the club's facilities Mon - Fri
                 for their own 'lap swimming' at a monthly fee. Adults recovering

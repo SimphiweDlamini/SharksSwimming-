@@ -71,7 +71,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images, onImageClick }) => {
             borderRadius="md"
             objectFit="cover"
             boxShadow="md"
-            maxH="200px"
+            maxH="300px"
             w="100%"
             cursor="pointer"
             onClick={() => onImageClick((startIdx + idx) % images.length)}
@@ -137,7 +137,7 @@ const OpenWaterSection: React.FC = () => {
         </Helmet>
 
         <Box id="openwater" py={20} px={6} mx="auto" bg={bg} color={color}>
-          <Container maxW="100%" px={6}>
+          <Container px={6}>
             <Heading
               as="h2"
               id="openwater-heading"
@@ -226,7 +226,7 @@ const OpenWaterSection: React.FC = () => {
               {selectedIdx !== null && (
                 <Image
                   src={images[selectedIdx]}
-                  alt={`Gallery image ${selectedIdx + 1}`}
+                  alt={`OpenWater image ${selectedIdx + 1}`}
                   maxH="90vh"
                   maxW="90vw"
                   borderRadius="lg"

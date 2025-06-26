@@ -85,7 +85,7 @@ const ContactSection = () => {
                 _dark={{ color: "teal.300" }}
                 _hover={{ textDecoration: "underline" }}
               >
-                Message on Whatsapp
+                Message On Whatsapp
               </Link>
             </HStack>
             <HStack>

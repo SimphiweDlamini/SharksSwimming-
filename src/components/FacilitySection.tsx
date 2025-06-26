@@ -156,7 +156,7 @@ const FacilitySection: React.FC = () => {
             >
               Facility
             </Heading>
-            <Stack direction={{ base: "column", sm: "row" }} px={4}>
+            <Stack direction={{ base: "column", lg: "row" }} px={4}>
               <Text paddingBottom={5} fontSize="lg" maxW="500px">
                 Our heated 3 lane, 20m pool is situated in{" "}
                 <strong>Ezulwini</strong> making it easily accessible to{" "}

@@ -148,7 +148,7 @@ const OpenWaterSection: React.FC = () => {
             >
               Open Water Swimming
             </Heading>
-            <Stack direction={{ base: "column", sm: "row" }} px={4}>
+            <Stack direction={{ base: "column", lg: "row" }} px={4}>
               <Text paddingBottom={5} fontSize="lg" maxW="450px">
                 Shark's Coach Chris has over{" "}
                 <strong>15 years experience</strong> in both training for and

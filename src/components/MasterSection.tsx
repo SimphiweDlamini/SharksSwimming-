@@ -37,8 +37,8 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images, onImageClick }) => {
           borderRadius="md"
           objectFit="cover"
           boxShadow="md"
-          maxH="600px"
-          w="350px"
+          maxH="300px"
+          w="100%"
           cursor="pointer"
           onClick={() => onImageClick(idx)}
           transition="transform 1s"
@@ -115,7 +115,7 @@ const MasterSection: React.FC = () => {
             </Heading>
             <Stack
               justify="center"
-              direction={{ base: "column", sm: "row" }}
+              direction={{ base: "column", lg: "row" }}
               px={4}
             >
               <ImageGrid images={images} onImageClick={openImage} />
@@ -125,7 +125,6 @@ const MasterSection: React.FC = () => {
                 paddingBottom={5}
                 fontSize="lg"
                 maxW="500px"
-                flex="1"
               >
                 <strong>Sharks Swimming Club</strong> offers both an adult '
                 <strong>learn to swim</strong>' program and an adult training

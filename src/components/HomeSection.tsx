@@ -76,7 +76,7 @@ const HomeSection = () => {
           id="home"
           minH="100vh"
           bgImage={`url(${images[bgIndex]})`}
-          //bgPosition="center"
+          backgroundPosition={{ base: "center", md: "center" }} // Ensures centering on all devices
           bgRepeat="no-repeat"
           bgSize="cover"
           color="white"

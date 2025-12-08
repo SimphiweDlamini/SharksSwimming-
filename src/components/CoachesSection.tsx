@@ -89,7 +89,7 @@ const CoachesSection = () => {
               With{" "}
               <strong>over 30 years of coaching and teaching experience</strong>
               , Chris has instructed adults and children of all ages and
-              abilities. He represented eSwatini in swimming at the{" "}
+              abilities. He represented eSwatini / Swaziland in swimming at the{" "}
               <strong>1986 Commonwealth Games</strong> and has{" "}
               <strong>never stopped competing</strong>, remaining active,
               especially in the 'Open Water' arena.

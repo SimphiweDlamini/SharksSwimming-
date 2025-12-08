@@ -158,9 +158,9 @@ const GallerySection: React.FC = () => {
             <Text paddingBottom={4} fontSize="lg" textAlign="center">
               Explore photos from our{" "}
               <strong>swimming lessons, competitions</strong>, and{" "}
-              <strong>community events</strong> in <strong>Eswatini</strong>.
-              See our swimmers in action and get inspired to join Sharks
-              Swimming Club!
+              <strong>community events</strong> in{" "}
+              <strong>Eswatini / Swaziland</strong>. See our swimmers in action
+              and get inspired to join Sharks Swimming Club!
             </Text>
 
             <ImageGrid images={images} onImageClick={openImage} />

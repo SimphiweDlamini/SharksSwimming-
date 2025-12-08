@@ -117,9 +117,9 @@ const HomeSection = () => {
               fontFamily="Roboto Slab, serif"
             >
               Welcome to <strong>Sharks Swim Club Eswatini</strong>! We provide{" "}
-              <strong>swim lessons in Eswatini</strong> for all ages and
-              abilities. Join our club to learn from a coach with over 30 years
-              experience and become a confident swimmer in a supportive
+              <strong>swim lessons in Eswatini / Swaziland</strong> for all ages
+              and abilities. Join our club to learn from a coach with over 30
+              years experience and become a confident swimmer in a supportive
               community
             </Text>
           </VStack>

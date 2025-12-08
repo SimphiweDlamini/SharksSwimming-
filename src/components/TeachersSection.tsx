@@ -42,10 +42,10 @@ const TeachersSection = () => {
             </Heading>
             <Text paddingBottom={5} fontSize="lg">
               Coach Chris has been running the '
-              <strong>Elementary Swim Course</strong>' in eSwatini for over 25
-              years. Many of today's swim teachers and coaches have at some time
-              been tutored by him. This course is aimed at those clubs, schools
-              , individuals who want to{" "}
+              <strong>Elementary Swim Course</strong>' in eSwatini / Swaziland
+              for over 25 years. Many of today's swim teachers and coaches have
+              at some time been tutored by him. This course is aimed at those
+              clubs, schools , individuals who want to{" "}
               <strong>learn how to teach swimming</strong>. This course is
               hosted at Sharks Swim Club pool, and is recognised by the{" "}
               <strong>Eswatini Swimming Association</strong>.

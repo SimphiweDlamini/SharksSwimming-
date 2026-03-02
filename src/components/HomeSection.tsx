@@ -11,6 +11,7 @@ const images = [
   "/swim3.jpg",
   "/facility1.jpg",
   "/swim4.jpg",
+  "/charity2.jpeg",
   "/swim5.jpg",
   "/openwater2.jpg",
   "/swim6.jpg",
@@ -22,12 +23,14 @@ const images = [
   "/swim10.jpg",
   "/swim11.jpg",
   "/facility2.jpg",
+  "/charity3.jpg",
   "/swim12.jpg",
   "/swim13.jpg",
   "/openwater4.jpg",
   "/swim14.jpg",
   "/swim15.jpg",
   "/master1.jpg",
+  "/charity4.jpg",
 ];
 
 const HomeSection = () => {
